@@ -7,6 +7,10 @@ class Artists {
     return artists.map(this.parseArtist);
   };
 
+  getSlugs = async () => {
+    return await Api.get("/artists/slugs");
+  }
+
   get = async (id: ArtistId) => {
     const artist = await Api.get(`/artists/${id}`);
     return this.parseArtist(artist);

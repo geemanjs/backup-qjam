@@ -91,6 +91,10 @@ class Events {
   };
 
   parseEvent = apiEventToRealEvent;
+
+  async getSlugs() {
+    return await Api.get("/events/slugs");
+  }
 }
 
 export const EventsService = new Events();

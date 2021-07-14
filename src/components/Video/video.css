@@ -1,0 +1,57 @@
+video:focus,
+.vjs-volume-level:focus,
+button:focus,
+li:focus {
+  outline: none;
+}
+
+.video-js .vjs-big-play-button {
+  top: 50%;
+  left: 50%;
+  margin-left: -1em;
+  margin-top: -1em;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  border: none;
+  border-radius: 50%;
+  font-size: 3.5em;
+  background-color: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  -webkit-transition: border-color 0.4s, outline 0.4s, background-color 0.4s;
+  -moz-transition: border-color 0.4s, outline 0.4s, background-color 0.4s;
+  -ms-transition: border-color 0.4s, outline 0.4s, background-color 0.4s;
+  -o-transition: border-color 0.4s, outline 0.4s, background-color 0.4s;
+  transition: border-color 0.4s, outline 0.4s, background-color 0.4s;
+}
+
+.video-js .vjs-menu-button-popup .vjs-menu .vjs-menu-item.vjs-selected {
+  background-color: #49b8ab;
+}
+
+.video-js:hover .vjs-big-play-button,
+.video-js .vjs-big-play-button:focus,
+.video-js .vjs-big-play-button:active {
+  background-color: transparent;
+}
+
+.video-js .vjs-big-play-button {
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 5em;
+  height: 2em !important;
+  line-height: 2em !important;
+  margin-top: -1em !important;
+}
+
+.video-js .vjs-loading-spinner {
+  border-color: rgba(73, 184, 171, 0.8);
+}
+
+.video-js .vjs-control-bar2 {
+  background-color: #2a353a;
+}
+
+.video-js .vjs-play-progress,
+.video-js .vjs-volume-level {
+  background-color: #49b8ab;
+}
