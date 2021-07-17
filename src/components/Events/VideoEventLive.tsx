@@ -32,7 +32,7 @@ function seoConfig(event: Event) {
   };
 }
 
-export class EventLiveVideo extends React.Component<IEventProps> {
+export class VideoEventLive extends React.Component<IEventProps> {
   state = {
     startAt: -1
   };

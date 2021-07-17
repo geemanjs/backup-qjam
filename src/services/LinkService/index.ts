@@ -1,7 +1,7 @@
 import { Api } from '../Api';
 
 class LinkService {
-  URI = `${process.env.FIREBASE_DYNAMIC_LINK_API}`;
+  URI = `${process.env.NEXT_PUBLIC_FIREBASE_DYNAMIC_LINK_API}`;
 
   get = async (to: string) =>
     await Api.getFromNonBase(this.URI, {

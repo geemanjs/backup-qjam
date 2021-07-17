@@ -1,5 +1,4 @@
 import NextDocument, { Html, Head, Main, NextScript } from 'next/document'
-import Image from 'next/image';
 import { ColorModeScript } from '@chakra-ui/react'
 import { GA_TRACKING_ID } from '../components/GTag';
 
@@ -12,47 +11,48 @@ export default class Document extends NextDocument {
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <meta property="fb:app_id" content="1443618142549899" />
           <meta httpEquiv="Accept-CH" content="DPR, Viewport-Width, Width" />
-          <link rel="icon" href="/public/favicon.ico" />
-          <link rel="apple-touch-icon" href="/public/img/apple/apple-touch-icon.png" />
+          <link rel="icon" href="/favicon.ico" />
+          <link rel="stylesheet" href="https://use.typekit.net/lmh1vux.css"/>
+          <link rel="apple-touch-icon" href="/img/apple/apple-touch-icon.png" />
           <link
             rel="apple-touch-icon"
             sizes="57x57"
-            href="/public/img/apple/apple-touch-icon-57x57.png"
+            href="/img/apple/apple-touch-icon-57x57.png"
           />
           <link
             rel="apple-touch-icon"
             sizes="72x72"
-            href="/public/img/apple/apple-touch-icon-72x72.png"
+            href="/img/apple/apple-touch-icon-72x72.png"
           />
           <link
             rel="apple-touch-icon"
             sizes="76x76"
-            href="/public/img/apple/apple-touch-icon-76x76.png"
+            href="/img/apple/apple-touch-icon-76x76.png"
           />
           <link
             rel="apple-touch-icon"
             sizes="114x114"
-            href="/public/img/apple/apple-touch-icon-114x114.png"
+            href="/img/apple/apple-touch-icon-114x114.png"
           />
           <link
             rel="apple-touch-icon"
             sizes="120x120"
-            href="/public/img/apple/apple-touch-icon-120x120.png"
+            href="/img/apple/apple-touch-icon-120x120.png"
           />
           <link
             rel="apple-touch-icon"
             sizes="144x144"
-            href="/public/img/apple/apple-touch-icon-144x144.png"
+            href="/img/apple/apple-touch-icon-144x144.png"
           />
           <link
             rel="apple-touch-icon"
             sizes="152x152"
-            href="/public/img/apple/apple-touch-icon-152x152.png"
+            href="/img/apple/apple-touch-icon-152x152.png"
           />
           <link
             rel="apple-touch-icon"
             sizes="180x180"
-            href="/public/img/apple/apple-touch-icon-180x180.png"
+            href="/img/apple/apple-touch-icon-180x180.png"
           />
           <meta
             name="google-site-verification"
@@ -86,7 +86,7 @@ export default class Document extends NextDocument {
             }}
           />
           <noscript>
-            <Image
+            <img
               alt=""
               height="1"
               width="1"

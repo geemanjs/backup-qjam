@@ -108,6 +108,7 @@ export type Artist = {
   spotifyUri?: string;
   appleMusicUrl?: string;
   isVerified: boolean;
+  isUnclaimed: boolean;
   upcomingEvents?: Event[];
   previousEvents?: Event[];
   music?: {
@@ -118,7 +119,10 @@ export type Artist = {
   isFollowing: boolean;
   followerCount: number;
   bio: string;
+  slug: string;
 };
+
+export type ArtistSource = "ALGOLIA" | "FEATURED";
 
 export type ApiDateTime =
 {

@@ -21,12 +21,12 @@ class Artists {
       artist.id = artist.objectID;
     }
     if (artist.coverPhoto) {
-      artist.coverPhoto.loc = `${process.env.CLOUDINARY_API}/${artist.coverPhoto.loc}.jpg`;
+      artist.coverPhoto.loc = `${process.env.NEXT_PUBLIC_CLOUDINARY_API}/${artist.coverPhoto.loc}.jpg`;
     } else {
       artist.coverPhoto = { loc: `/static/img/icons/no-cover-photo.png`, type: "" };
     }
     if (artist.profilePic) {
-      artist.profilePic.loc = `${process.env.CLOUDINARY_API}/${artist.profilePic.loc}.jpg`;
+      artist.profilePic.loc = `${process.env.NEXT_PUBLIC_CLOUDINARY_API}/${artist.profilePic.loc}.jpg`;
     } else {
       artist.profilePic = { loc: `/static/img/icons/no-avatar.png`, type: "" };
     }

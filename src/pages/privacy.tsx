@@ -32,9 +32,9 @@ const Privacy = () => (
     <NextSeo
       {...seoConfig()}
     />
-    <Container pt={4}>
+    <Container py={8}>
       <Heading pb={2}>Privacy and Cookies Policy</Heading>
-        <Heading as="h3" fontSize="md" mb={2}>
+        <Heading as="h3" fontSize="md" mt={6} mb={2}>
           WHO WE ARE{' '}
         </Heading>
         <Text as="p" mb={2}>QJAM is a limited company registered in England and Wales.</Text>
@@ -51,14 +51,14 @@ const Privacy = () => (
           services that we provide (“Service”) (we refer to the Site, the App, the Software and the
           Service collectively as “QJAM”).
         </Text>
-        <Heading as="h3" fontSize="md" mb={2}>
+        <Heading as="h3" fontSize="md" mt={6} mb={2}>
           WHAT DATA DO WE COLLECT?{' '}
         </Heading>
         <Text as="p" mb={2}>
           We collect a variety of data, including “personal data” (data that identifies you). More
           information is set out below.
         </Text>
-        <Heading as="h3" fontSize="md" mb={2}>
+        <Heading as="h3" fontSize="md" mt={6} mb={2}>
           WITHIN THE APP{' '}
         </Heading>
         <Text as="p" mb={2}>
@@ -77,7 +77,7 @@ const Privacy = () => (
           example messages sent to you, or content uploaded by other users which relates to you in
           some way, for example a picture of you.
         </Text>
-        <Heading as="h3" fontSize="md" mb={2}>
+        <Heading as="h3" fontSize="md" mt={6} mb={2}>
           OUTSIDE THE APP{' '}
         </Heading>
         <Text as="p" mb={2}>
@@ -109,7 +109,7 @@ const Privacy = () => (
           content to third parties in a manner that does not reveal personal information, as
           described in this Privacy Policy.
         </Text>
-        <Heading as="h3" fontSize="md" mb={2}>
+        <Heading as="h3" fontSize="md" mt={6} mb={2}>
           HOW DO WE USE THE DATA WE COLLECT?{' '}
         </Heading>
         <strong>Personal data</strong>
@@ -170,7 +170,7 @@ const Privacy = () => (
           You may opt out of the Google Analytics Advertising Feature at
           https://tools.google.com/dlpage/gaoptout/
         </Text>
-        <Heading as="h3" fontSize="md" mb={2}>
+        <Heading as="h3" fontSize="md" mt={6} mb={2}>
           WHAT CONTROL DO I HAVE OVER QJAM’S USE OF MY PERSONAL DATA?{' '}
         </Heading>
         <Text as="p" mb={2}>
@@ -197,7 +197,7 @@ const Privacy = () => (
           parties. If you are a California resident and would like a copy of this notice, please
           submit a written request to QJAM, 90 Long Acre, London WC2E 9RA, UK. Email info@qjam.com
         </Text>
-        <Heading as="h3" fontSize="md" mb={2}>
+        <Heading as="h3" fontSize="md" mt={6} mb={2}>
           WILL WE SHARE YOUR DATA WITH THIRD PARTIES?{' '}
         </Heading>
         <Text as="p" mb={2}>
@@ -231,7 +231,7 @@ const Privacy = () => (
           We may share your personal data at any time if required for legal reasons or in order to
           enforce our Terms of Use or this Privacy Policy.
         </Text>
-        <Heading as="h3" fontSize="md" mb={2}>
+        <Heading as="h3" fontSize="md" mt={6} mb={2}>
           HOW DOES QJAM PROTECT CUSTOMER DATA?{' '}
         </Heading>
         <Text as="p" mb={2}>
@@ -251,7 +251,7 @@ const Privacy = () => (
           any personal data you transmit to us. Any such transmission is done at your own risk. If
           you believe that your interaction with us is no longer secure, please contact us.
         </Text>
-        <Heading as="h3" fontSize="md" mb={2}>
+        <Heading as="h3" fontSize="md" mt={6} mb={2}>
           COOKIES{' '}
         </Heading>
         <Text as="p" mb={2}>
@@ -306,7 +306,7 @@ const Privacy = () => (
           </li>
         </ol>
         <br />
-        <Heading as="h3" fontSize="md" mb={2}>
+        <Heading as="h3" fontSize="md" mt={6} mb={2}>
           How to manage cookies{' '}
         </Heading>
         You can manage cookies to a certain extent by amending and setting controls on your internet
@@ -322,7 +322,7 @@ const Privacy = () => (
           You may also limit or prevent the placement of cookies by advertising networks or by
           setting your preferences for the major technology providers at choice.live.com
         </Text>
-        <Heading as="h3" fontSize="md" mb={2}>
+        <Heading as="h3" fontSize="md" mt={6} mb={2}>
           INDIVIDUALS UNDER 18 YEARS OF AGE{' '}
         </Heading>
         <Text as="p" mb={2}>
@@ -350,7 +350,7 @@ const Privacy = () => (
           such personal information. However, QJAM requires its partners to agree to remove or
           destroy such personally identifiable information if requested to do so.
         </Text>
-        <Heading as="h3" fontSize="md" mb={2}>
+        <Heading as="h3" fontSize="md" mt={6} mb={2}>
           THIRD PARTY LINKS AND CO-BRAND RELATIONSHIPS{' '}
         </Heading>
         <Text as="p" mb={2}>
@@ -366,7 +366,7 @@ const Privacy = () => (
           (e.g. Facebook), your use is also subject to these third party’s Privacy Policies and in
           accordance with your account settings with these third parties.
         </Text>
-        <Heading as="h3" fontSize="md" mb={2}>
+        <Heading as="h3" fontSize="md" mt={6} mb={2}>
           TRANSFER OF BUSINESS ASSETS{' '}
         </Heading>
         <Text as="p" mb={2}>
@@ -378,7 +378,7 @@ const Privacy = () => (
           or our assets may continue to use your personal information as set forth in this Privacy
           Policy.
         </Text>
-        <Heading as="h3" fontSize="md" mb={2}>
+        <Heading as="h3" fontSize="md" mt={6} mb={2}>
           INTERNATIONAL TRANSFER OF DATA{' '}
         </Heading>
         <Text as="p" mb={2}>
@@ -387,7 +387,7 @@ const Privacy = () => (
           by using QJAM, you are permitting and consenting to the transfer of information, including
           personal data, outside of the US.
         </Text>
-        <Heading as="h3" fontSize="md" mb={2}>
+        <Heading as="h3" fontSize="md" mt={6} mb={2}>
           NOTIFICATION OF CHANGES AND ACCEPTANCE OF POLICY{' '}
         </Heading>
         <Text as="p" mb={2}>
@@ -396,7 +396,7 @@ const Privacy = () => (
           by us as set out in this Privacy Policy. Continued access or use of QJAM shall constitute
           your express acceptance of any modifications to this Privacy Policy.
         </Text>
-        <Heading as="h3" fontSize="md" mb={2}>
+        <Heading as="h3" fontSize="md" mt={6} mb={2}>
           INTERPRETATION{' '}
         </Heading>
         <Text as="p" mb={2}>
@@ -419,14 +419,14 @@ const Privacy = () => (
           exception to this is genuine correspondence expressed to be from the QJAM legal
           department.
         </Text>
-        <Heading as="h3" fontSize="md" mb={2}>
+        <Heading as="h3" fontSize="md" mt={6} mb={2}>
           TERMS OF USE{' '}
         </Heading>
         <Text as="p" mb={2}>
           Please also see our Terms of Use which set out the terms, disclaimers, and limitations of
           liability governing your use of QJAM.
         </Text>
-        <Heading as="h3" fontSize="md" mb={2}>
+        <Heading as="h3" fontSize="md" mt={6} mb={2}>
           HOW TO CONTACT US{' '}
         </Heading>
         <Text as="p" mb={2}>

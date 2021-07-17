@@ -19,6 +19,6 @@ export class Api {
   }
 
   static get(uri: string, opts?: any): Promise<any> {
-    return this.getFromNonBase(`${process.env.API}${uri}`, opts);
+    return this.getFromNonBase(`${process.env.NEXT_PUBLIC_API}${uri}`, opts);
   }
 }

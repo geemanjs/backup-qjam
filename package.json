@@ -12,6 +12,7 @@
     "@chakra-ui/theme-tools": "1.1.7",
     "@emotion/react": "11.4.0",
     "@emotion/styled": "11.3.0",
+    "algoliasearch": "^4.10.3",
     "framer-motion": "^4.1.17",
     "luxon": "^1.27.0",
     "next": "latest",
@@ -19,6 +20,7 @@
     "numeral": "^2.0.6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-instantsearch-dom": "^6.12.0",
     "video.js": "^7.13.3"
   },
   "devDependencies": {
@@ -27,6 +29,7 @@
     "@types/numeral": "^2.0.1",
     "@types/react": "^17.0.13",
     "@types/react-dom": "^17.0.8",
+    "@types/react-instantsearch-dom": "^6.10.2",
     "@types/video.js": "^7.3.24",
     "eslint": "^7.30.0",
     "eslint-config-next": "^11.0.1",

@@ -7,7 +7,7 @@ import {parseTimestamp} from '../../services/Dates/parseTimestamp';
 import {NextSeo} from 'next-seo';
 import VideoPlayer from '../Video/VideoPlayer';
 
-export const EventArchivedVideo = ({event, startAt = 0}: {
+export const VideoEventArchived = ({event, startAt = 0}: {
   startAt?: number;
   event: Event;
 }) => {
@@ -19,7 +19,7 @@ export const EventArchivedVideo = ({event, startAt = 0}: {
       />
       <VideoPlayer
         id="archived-player"
-        uri={`${process.env.CLOUDFRONT_VIDEO_API}/${event.video}`}
+        uri={`${process.env.NEXT_PUBLIC_CLOUDFRONT_VIDEO_API}/${event.video}`}
         seekTo={startAt}
         {...additional(event)}
       />
@@ -45,7 +45,7 @@ export const EventArchivedVideo = ({event, startAt = 0}: {
 const additional = (event: Event) => {
   if (event.videoThumbnail && event.videoThumbnail) {
     return {
-      poster: `${process.env.CLOUDFRONT_VIDEO_THUMBNAIL_API}/${event.videoThumbnail}`
+      poster: `${process.env.NEXT_PUBLIC_CLOUDFRONT_VIDEO_THUMBNAIL_API}/${event.videoThumbnail}`
     };
   }
   return {};
