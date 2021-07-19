@@ -5,7 +5,7 @@ export function refreshAt(time?: any) {
   var now = new Date();
   var timeout = time._seconds * 1000 + 15000 - now.getTime();
   if (timeout > 0) {
-    return setTimeout(function() {
+    return setTimeout(function () {
       window.location.reload(true);
     }, timeout);
   }

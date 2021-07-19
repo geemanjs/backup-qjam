@@ -1,21 +1,33 @@
-import {GetStaticProps} from "next";
-import {Artist, ArtistSource} from "../../types";
-import {ArtistService} from "../../services/ArtistService";
-import {useCallback, useState} from "react";
-import {StandardLayout} from "../../components/Layouts/Standard";
-import {Box, Container, Flex, Link as ChakraLink, SimpleGrid, Text} from '@chakra-ui/react';
-import Link from 'next/link';
-import algoliasearch from 'algoliasearch/lite';
+import { GetStaticProps } from "next";
+import { Artist, ArtistSource } from "../../types";
+import { ArtistService } from "../../services/ArtistService";
+import { useCallback, useState } from "react";
+import { StandardLayout } from "../../components/Layouts/Standard";
+import {
+  Box,
+  Container,
+  Flex,
+  Link as ChakraLink,
+  SimpleGrid,
+  Text,
+} from "@chakra-ui/react";
+import Link from "next/link";
+import algoliasearch from "algoliasearch/lite";
 // import {StateDisplay} from '../components/StateDisplay';
-import {Configure, Hits, InstantSearch, SearchBox} from 'react-instantsearch-dom';
+import {
+  Configure,
+  Hits,
+  InstantSearch,
+  SearchBox,
+} from "react-instantsearch-dom";
 
 const searchClient = algoliasearch(
-  'KD4O91PWKF',
-  '61f7d594374dda5c16aaabc1fe13feff'
+  "KD4O91PWKF",
+  "61f7d594374dda5c16aaabc1fe13feff"
 );
 
-import {NextSeo} from 'next-seo';
-import {ArtistCard} from "../../components/Artists/ArtistCard";
+import { NextSeo } from "next-seo";
+import { ArtistCard } from "../../components/Artists/ArtistCard";
 import styled from "@emotion/styled";
 
 function seoConfig() {
@@ -27,50 +39,47 @@ function seoConfig() {
       description: `Get the QJAM app to live video chat with your favourite artists and receive digital signings.`,
       images: [
         {
-          url:
-            'https://res.cloudinary.com/qjam/image/upload/v1575666417/website/SEO/Screenshot_2019-12-06_at_20.55.04.png',
+          url: "https://res.cloudinary.com/qjam/image/upload/v1575666417/website/SEO/Screenshot_2019-12-06_at_20.55.04.png",
           width: 2504,
           height: 1408,
-          alt: `QJAM – Meet your favourite artists.`
-        }
+          alt: `QJAM – Meet your favourite artists.`,
+        },
       ],
-      site_name: 'QJAM'
+      site_name: "QJAM",
     },
     twitter: {
-      cardType: 'summary_large_image'
-    }
+      cardType: "summary_large_image",
+    },
   };
 }
 
-export const Artists = ({artists}: { artists: Artist[] }) => {
+export const Artists = ({ artists }: { artists: Artist[] }) => {
   const [artistSource, setArtistSource] = useState<ArtistSource>("FEATURED");
 
-  const onSearchChange = useCallback((e: React.SyntheticEvent<HTMLInputElement>) => {
-    if (e.currentTarget.value) {
-      setArtistSource('ALGOLIA');
-    } else {
-      setArtistSource('FEATURED');
-    }
-  }, [setArtistSource]);
+  const onSearchChange = useCallback(
+    (e: React.SyntheticEvent<HTMLInputElement>) => {
+      if (e.currentTarget.value) {
+        setArtistSource("ALGOLIA");
+      } else {
+        setArtistSource("FEATURED");
+      }
+    },
+    [setArtistSource]
+  );
 
   return (
     <StandardLayout>
-      <NextSeo
-        {...seoConfig()}
-      />
+      <NextSeo {...seoConfig()} />
       <Container mt={4} maxW="container.lg">
         <SearchStyles>
-          <InstantSearch
-            searchClient={searchClient}
-            indexName="users"
-          >
+          <InstantSearch searchClient={searchClient} indexName="users">
             <SearchBox
               onChange={onSearchChange}
               autoFocus={true}
               translations={{
-                submitTitle: 'Submit your search query.',
-                resetTitle: 'Clear your search query.',
-                placeholder: 'Search for an artist'
+                submitTitle: "Submit your search query.",
+                resetTitle: "Clear your search query.",
+                placeholder: "Search for an artist",
               }}
             />
             <Configure
@@ -81,26 +90,33 @@ export const Artists = ({artists}: { artists: Artist[] }) => {
               <Text fontWeight={500}>Showing:&nbsp;&nbsp;</Text>
               <ChakraLink
                 onClick={() => setArtistSource("FEATURED")}
-                color={artistSource === 'FEATURED' ? 'teal.400' : 'gray.600'}
-                fontWeight={artistSource === 'FEATURED' ? 'bold' : 500}
+                color={artistSource === "FEATURED" ? "teal.400" : "gray.600"}
+                fontWeight={artistSource === "FEATURED" ? "bold" : 500}
               >
                 Featured
               </ChakraLink>
               &nbsp;|&nbsp;
               <ChakraLink
                 onClick={() => setArtistSource("ALGOLIA")}
-                color={artistSource === 'ALGOLIA' ? 'teal.400' : 'gray.600'}
-                fontWeight={artistSource === 'ALGOLIA' ? 'bold' : 500}
+                color={artistSource === "ALGOLIA" ? "teal.400" : "gray.600"}
+                fontWeight={artistSource === "ALGOLIA" ? "bold" : 500}
               >
                 All artists
               </ChakraLink>
             </Flex>
-            <Box pt={3} pb={4} style={{display: artistSource === 'ALGOLIA' ? 'block' : 'none'}}>
-              <Hits hitComponent={ArtistHit}/>
+            <Box
+              pt={3}
+              pb={4}
+              style={{ display: artistSource === "ALGOLIA" ? "block" : "none" }}
+            >
+              <Hits hitComponent={ArtistHit} />
             </Box>
           </InstantSearch>
 
-          <Box py={8} style={{display: artistSource === 'FEATURED' ? 'block' : 'none'}}>
+          <Box
+            py={8}
+            style={{ display: artistSource === "FEATURED" ? "block" : "none" }}
+          >
             {/*<StateDisplay {...this.state} />*/}
             <SimpleGrid columns={3} spacing={6}>
               {artists.map((artist) => (
@@ -109,8 +125,12 @@ export const Artists = ({artists}: { artists: Artist[] }) => {
                   href={`/artists/${artist.slug}`}
                   passHref={true}
                 >
-                  <ChakraLink color="white" textDecoration="none" outline="none">
-                    <ArtistCard artist={artist} source={artistSource}/>
+                  <ChakraLink
+                    color="white"
+                    textDecoration="none"
+                    outline="none"
+                  >
+                    <ArtistCard artist={artist} source={artistSource} />
                   </ChakraLink>
                 </Link>
               ))}
@@ -119,11 +139,10 @@ export const Artists = ({artists}: { artists: Artist[] }) => {
         </SearchStyles>
       </Container>
     </StandardLayout>
-  )
-}
+  );
+};
 
-
-const ArtistHit = ({ hit }:  {hit: Artist}) => {
+const ArtistHit = ({ hit }: { hit: Artist }) => {
   const artist = ArtistService.parseArtist(hit);
   return (
     <Link
@@ -139,13 +158,13 @@ const ArtistHit = ({ hit }:  {hit: Artist}) => {
   );
 };
 
-
-export const getStaticProps: GetStaticProps<{ artists: Artist[] }, {}> = async () => {
-  const artists = await ArtistService.featured();
-  return {
-    props: {artists},
+export const getStaticProps: GetStaticProps<{ artists: Artist[] }, {}> =
+  async () => {
+    const artists = await ArtistService.featured();
+    return {
+      props: { artists },
+    };
   };
-}
 
 //  language=SCSS
 const SearchStyles = styled("div")`
@@ -214,4 +233,4 @@ const SearchStyles = styled("div")`
   }
 `;
 
-export default Artists
+export default Artists;

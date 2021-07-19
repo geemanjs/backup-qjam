@@ -1,4 +1,3 @@
-
 export class Api {
   static async getFromNonBase(uri: string, opts?: any) {
     const res = await fetch(uri, opts);
@@ -6,14 +5,16 @@ export class Api {
       return Promise.resolve(res.json());
     } else {
       if (res.status === 0) {
-        return Promise.reject(new Error('Unable to contact server, check your network'));
+        return Promise.reject(
+          new Error("Unable to contact server, check your network")
+        );
       }
       const json = await res.text();
       try {
         const error = JSON.parse(json);
         return Promise.reject(new Error(`Server error: ${error.message}`));
       } catch (err) {
-        return Promise.reject(new Error('Unknown server error'));
+        return Promise.reject(new Error("Unknown server error"));
       }
     }
   }

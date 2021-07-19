@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 
 // language=SCSS
 export const ABlank = styled.a`

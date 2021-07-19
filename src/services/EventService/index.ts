@@ -1,18 +1,25 @@
-import { Api } from '../Api';
-import { DateTime } from 'luxon';
-import {ApiDateTime, Event, EventId, HostId, Jammer, Queuer} from '../../types';
+import { Api } from "../Api";
+import { DateTime } from "luxon";
+import {
+  ApiDateTime,
+  Event,
+  EventId,
+  HostId,
+  Jammer,
+  Queuer,
+} from "../../types";
 
 const apiEventToRealEvent = (apiEvent: any): Event => {
   apiEvent.eventPic.loc = `${process.env.NEXT_PUBLIC_CLOUDINARY_API}/${apiEvent.eventPic.loc}.jpg`;
   apiEvent.artistProfilePicLoc = apiEvent.artistProfilePicLoc
     ? `${process.env.NEXT_PUBLIC_CLOUDINARY_API}/${apiEvent.artistProfilePicLoc}.jpg`
-    : '/static/img/icons/no-avatar.png';
+    : "/static/img/icons/no-avatar.png";
   if (apiEvent.archivedParticipants) {
     apiEvent.archivedParticipants.forEach((jammer: Jammer) => {
       if (jammer.profileImage) {
         jammer.profileImage = `${process.env.NEXT_PUBLIC_CLOUDINARY_API}/${jammer.profileImage}.jpg`;
       } else {
-        jammer.profileImage = '/static/img/icons/no-avatar.png';
+        jammer.profileImage = "/static/img/icons/no-avatar.png";
       }
     });
   }
@@ -21,7 +28,7 @@ const apiEventToRealEvent = (apiEvent: any): Event => {
       if (queuer.profileImage) {
         queuer.profileImage = `${process.env.NEXT_PUBLIC_CLOUDINARY_API}/${queuer.profileImage}.jpg`;
       } else {
-        queuer.profileImage = '/static/img/icons/no-avatar.png';
+        queuer.profileImage = "/static/img/icons/no-avatar.png";
       }
     });
   }
@@ -42,9 +49,7 @@ class Events {
   };
 
   upcoming = async (limit = 9) => {
-    const now = DateTime.local()
-      .minus({ hours: 1 })
-      .toISO();
+    const now = DateTime.local().minus({ hours: 1 }).toISO();
     const res = await Api.get(
       `/events?limit=${limit}&from=${encodeURIComponent(now)}&status=SCHEDULED`
     );
@@ -67,7 +72,9 @@ class Events {
   upcomingByHost = async (hostId: HostId, limit = 6) => {
     const now = DateTime.local().toISO();
     const res = await Api.get(
-      `/events?limit=${limit}&from=${encodeURIComponent(now)}&hostId=${hostId}&status=SCHEDULED`
+      `/events?limit=${limit}&from=${encodeURIComponent(
+        now
+      )}&hostId=${hostId}&status=SCHEDULED`
     );
     return this.parseEventResponse(res);
   };
@@ -75,13 +82,17 @@ class Events {
   archivedByHost = async (hostId: HostId, limit = 6) => {
     const now = DateTime.local().toISO();
     const unParsedEvents = await Api.get(
-      `/events?limit=${limit}&to=${encodeURIComponent(now)}&hostId=${hostId}&status=ARCHIVED`
+      `/events?limit=${limit}&to=${encodeURIComponent(
+        now
+      )}&hostId=${hostId}&status=ARCHIVED`
     );
     return this.parseEventResponse(unParsedEvents);
   };
 
   liveByHost = async (hostId: HostId, limit = 100) => {
-    const res = await Api.get(`/events?limit=${limit}&status=LIVE&hostId=${hostId}`);
+    const res = await Api.get(
+      `/events?limit=${limit}&status=LIVE&hostId=${hostId}`
+    );
     return this.parseEventResponse(res);
   };
 
@@ -93,7 +104,7 @@ class Events {
   parseEvent = apiEventToRealEvent;
 
   async getSlugs() {
-    return await Api.get("/events/slugs");
+    return await Api.get("/events/ids");
   }
 }
 

@@ -3,8 +3,8 @@ export type Media = {
   type: string;
 };
 
-export type EventType = 'JAM' | 'BROADCAST' | 'SIGNING';
-export type EventStatus = 'SCHEDULED' | 'LIVE' | 'ARCHIVED';
+export type EventType = "JAM" | "BROADCAST" | "SIGNING";
+export type EventStatus = "SCHEDULED" | "LIVE" | "ARCHIVED";
 
 export type Jammer = {
   id: string;
@@ -76,9 +76,9 @@ export interface IUserSnapshot {
 }
 
 export enum UserRole {
-  ADMIN = 'admin',
-  ARTIST = 'artist',
-  FAN = 'fan'
+  ADMIN = "admin",
+  ARTIST = "artist",
+  FAN = "fan",
 }
 
 export type MusicMedia = {
@@ -101,7 +101,7 @@ export type MusicTrack = {
 
 export type Artist = {
   id: string;
-  objectID: string
+  objectID: string;
   displayName: string;
   profilePic: Media;
   coverPhoto: Media;
@@ -124,12 +124,11 @@ export type Artist = {
 
 export type ArtistSource = "ALGOLIA" | "FEATURED";
 
-export type ApiDateTime =
-{
+export type ApiDateTime = {
   startAt: {
-    _seconds: number
-  }
-}
+    _seconds: number;
+  };
+};
 
 export type HostId = string;
 export type EventId = string;

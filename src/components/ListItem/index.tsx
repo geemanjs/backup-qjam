@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Flex, Text } from '@chakra-ui/react';
+import { Flex, Text } from "@chakra-ui/react";
 
 export const ListItem = (props: any) => {
   const { children } = props;
@@ -43,8 +43,8 @@ export const ListItem = (props: any) => {
     const { children, ...other } = props;
     const flexExtras = { style: { flexGrow: 1 } };
     return (
-      <Flex p={2} flexDirection='row' alignItems='center' {...other}>
-        <Flex flexDirection='column' mr={2} {...flexExtras}>
+      <Flex p={2} flexDirection="row" alignItems="center" {...other}>
+        <Flex flexDirection="column" mr={2} {...flexExtras}>
           {Title}
           {Subtitle}
         </Flex>

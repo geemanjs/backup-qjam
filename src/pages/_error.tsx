@@ -1,6 +1,6 @@
-import { Container } from '@chakra-ui/react';
-import * as React from 'react';
-import {StandardLayout} from "../components/Layouts/Standard";
+import { Container } from "@chakra-ui/react";
+import * as React from "react";
+import { StandardLayout } from "../components/Layouts/Standard";
 
 const ErrorPage = () => (
   <StandardLayout>

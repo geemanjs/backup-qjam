@@ -1,13 +1,17 @@
-import React from 'react';
-import { Button, Flex } from '@chakra-ui/react';
+import React from "react";
+import { Button, Flex } from "@chakra-ui/react";
 
-export const FacebookShare = ({ to }: {to: string}) => (
+export const FacebookShare = ({ to }: { to: string }) => (
   <a href={to} target="_blank" rel="noreferrer">
     <Button bg="#29487d" color="white" width={1}>
-      <Flex alignItems={'center'} justifyContent={'space-between'} color="white">
+      <Flex
+        alignItems={"center"}
+        justifyContent={"space-between"}
+        color="white"
+      >
         <svg
           height="22px"
-          style={{ marginRight: '8px' }}
+          style={{ marginRight: "8px" }}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 16 16"
           color="#FFFFFF"

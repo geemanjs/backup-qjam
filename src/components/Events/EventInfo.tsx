@@ -1,18 +1,20 @@
+import { Avatar, Box, Heading, Text, Link as ALink } from "@chakra-ui/react";
+import Link from "next/link";
+import * as React from "react";
 import {
-  Avatar,
-  Box,
-  Heading,
-  Text,
-  Link as ALink
-} from '@chakra-ui/react';
-import Link from 'next/link';
-import * as React from 'react';
-import { ListItem, ListItemLeft, ListItemRight, ListItemTitle } from '../ListItem';
-import { ShareModal } from '../ShareModal';
+  ListItem,
+  ListItemLeft,
+  ListItemRight,
+  ListItemTitle,
+} from "../ListItem";
+import { ShareModal } from "../ShareModal";
 
-export class EventInfo extends React.Component<{ event: any }, { isShareModalOpen: boolean }> {
+export class EventInfo extends React.Component<
+  { event: any },
+  { isShareModalOpen: boolean }
+> {
   state = {
-    isShareModalOpen: false
+    isShareModalOpen: false,
   };
   onToggleShare = () => {
     this.setState((prev) => ({ isShareModalOpen: !prev.isShareModalOpen }));
@@ -22,21 +24,18 @@ export class EventInfo extends React.Component<{ event: any }, { isShareModalOpe
     const { event } = this.props;
     const { isShareModalOpen } = this.state;
     return (
-      <Box p={2} px={3}>
+      <Box p={3} px={6}>
         <ListItem pl={0}>
-          <ListItemLeft>
-            <Avatar src={event.artistProfilePicLoc} />
+          <ListItemLeft mr={2}>
+            <Avatar size="lg" src={event.artistProfilePicLoc} />
           </ListItemLeft>
-          <ListItemTitle fontWeight="bold" fontSize={4}>
-            {event.status === 'ARCHIVED' && (
-              <Link
-                passHref={true}
-                href={`/artist/${event.host.slug}`}
-              >
+          <ListItemTitle fontWeight="bold" fontSize="lg">
+            {event.status === "ARCHIVED" && (
+              <Link passHref={true} href={`/artist/${event.host.slug}`}>
                 <ALink target="_blank">{event.hostName}</ALink>
               </Link>
             )}
-            {event.status !== 'ARCHIVED' && event.hostName}
+            {event.status !== "ARCHIVED" && event.hostName}
           </ListItemTitle>
           {!event.isPrivate && (
             <ListItemRight>
@@ -56,7 +55,7 @@ export class EventInfo extends React.Component<{ event: any }, { isShareModalOpe
             </ListItemRight>
           )}
         </ListItem>
-        <Heading as={'h3'} fontSize="lg" mt={2} fontWeight={500}>
+        <Heading as={"h3"} fontSize="lg" mt={2} fontWeight={500}>
           {event.title}
         </Heading>
         <Text whiteSpace="pre-wrap" fontSize="md" pt={1} pb={2}>

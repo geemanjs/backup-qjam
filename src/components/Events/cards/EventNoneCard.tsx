@@ -1,6 +1,6 @@
-import { Box, Text, Flex, Heading } from '@chakra-ui/react';
-import * as React from 'react';
-import { Icon } from '../../Icon';
+import { Box, Text, Flex, Heading } from "@chakra-ui/react";
+import * as React from "react";
+import { Icon } from "../../Icon";
 
 export const NoEvents = () => (
   <Box mt={3} mb={5} textAlign="center">

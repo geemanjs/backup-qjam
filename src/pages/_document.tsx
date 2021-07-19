@@ -1,6 +1,6 @@
-import NextDocument, { Html, Head, Main, NextScript } from 'next/document'
-import { ColorModeScript } from '@chakra-ui/react'
-import { GA_TRACKING_ID } from '../components/GTag';
+import NextDocument, { Html, Head, Main, NextScript } from "next/document";
+import { ColorModeScript } from "@chakra-ui/react";
+import { GA_TRACKING_ID } from "../components/GTag";
 
 export default class Document extends NextDocument {
   render() {
@@ -8,11 +8,14 @@ export default class Document extends NextDocument {
       <Html lang="en-gb" prefix="og: http://ogp.me/ns#">
         <Head>
           <meta charSet="utf-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
           <meta property="fb:app_id" content="1443618142549899" />
           <meta httpEquiv="Accept-CH" content="DPR, Viewport-Width, Width" />
           <link rel="icon" href="/favicon.ico" />
-          <link rel="stylesheet" href="https://use.typekit.net/lmh1vux.css"/>
+          <link rel="stylesheet" href="https://use.typekit.net/lmh1vux.css" />
           <link rel="apple-touch-icon" href="/img/apple/apple-touch-icon.png" />
           <link
             rel="apple-touch-icon"
@@ -58,7 +61,10 @@ export default class Document extends NextDocument {
             name="google-site-verification"
             content="bs7EduHcBSCJzyNd-OOTi1VkXEebbhmozZ4tmiiBKkE"
           />
-          <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+          />
           <script
             dangerouslySetInnerHTML={{
               __html: `
@@ -66,7 +72,7 @@ export default class Document extends NextDocument {
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', '${GA_TRACKING_ID}');
-          `
+          `,
             }}
           />
           <script
@@ -82,7 +88,7 @@ export default class Document extends NextDocument {
             'https://connect.facebook.net/en_US/fbevents.js');
             fbq('init', '494508264500162'); 
             fbq('track', 'PageView');
-            `
+            `,
             }}
           />
           <noscript>
@@ -102,6 +108,6 @@ export default class Document extends NextDocument {
           <NextScript />
         </body>
       </Html>
-    )
+    );
   }
 }

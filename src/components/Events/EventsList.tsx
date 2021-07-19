@@ -1,12 +1,31 @@
-import { Box, Heading, SimpleGrid } from '@chakra-ui/react';
-import * as React from 'react';
-import {Event} from '../../types';
-import { EventLive } from './cards/EventLiveCard';
-import { EventUpcoming } from './cards/EventUpcomingCard';
-import { EventArchived } from './cards/EventArchivedCard';
-import {refreshAt} from "../../services/Utils/refreshAt";
+import { Box, Heading, SimpleGrid } from "@chakra-ui/react";
+import * as React from "react";
+import { Event } from "../../types";
+import { EventLive } from "./cards/EventLiveCard";
+import { EventUpcomingCard } from "./cards/EventUpcomingCard";
+import { EventArchived } from "./cards/EventArchivedCard";
+import { refreshAt } from "../../services/Utils/refreshAt";
 
-export class EventsList extends React.Component<{ live: Event[]; upcoming: Event[]; archived: Event[] }> {
+const EventHeading = ({ children }) => {
+  return (
+    <Heading
+      textAlign="center"
+      pb={4}
+      fontSize="4xl"
+      pt={4}
+      fontWeight="bold"
+      color="neutral.900"
+    >
+      {children}
+    </Heading>
+  );
+};
+
+export class EventsList extends React.Component<{
+  live: Event[];
+  upcoming: Event[];
+  archived: Event[];
+}> {
   timer?: NodeJS.Timeout;
 
   componentDidMount() {
@@ -18,7 +37,7 @@ export class EventsList extends React.Component<{ live: Event[]; upcoming: Event
   }
 
   componentWillUnmount() {
-    if(this.timer) {
+    if (this.timer) {
       clearTimeout(this.timer);
     }
   }
@@ -29,10 +48,13 @@ export class EventsList extends React.Component<{ live: Event[]; upcoming: Event
       <React.Fragment>
         {live && live.length > 0 && (
           <Box mb={4}>
-            <Heading textAlign="center" pb={4} fontSize={5} pt={4} fontWeight="bold">
-              LIVE
-            </Heading>
-            <SimpleGrid columns={3} spacing={6}>
+            <EventHeading>LIVE</EventHeading>
+            <SimpleGrid
+              columns={3}
+              spacing={6}
+              gridTemplateColumns="repeat(auto-fit, minmax(250px, 317px))"
+              width="full"
+            >
               {live.map((event) => (
                 <EventLive key={event.id} event={event} />
               ))}
@@ -41,22 +63,28 @@ export class EventsList extends React.Component<{ live: Event[]; upcoming: Event
         )}
         {upcoming && upcoming.length > 0 && (
           <Box mb={4}>
-            <Heading textAlign="center" pb={4} fontSize={5} pt={4} fontWeight="bold">
-              UPCOMING EVENTS
-            </Heading>
-            <SimpleGrid columns={3} spacing={6}>
+            <EventHeading>UPCOMING EVENTS</EventHeading>
+            <SimpleGrid
+              columns={3}
+              spacing={6}
+              gridTemplateColumns="repeat(auto-fit, minmax(250px, 317px))"
+              width="full"
+            >
               {upcoming.map((event) => (
-                <EventUpcoming key={event.id} event={event} />
+                <EventUpcomingCard key={event.id} event={event} />
               ))}
             </SimpleGrid>
           </Box>
         )}
         {archived && archived.length > 0 && (
           <Box>
-            <Heading textAlign="center" pb={4} fontSize={5} pt={4} fontWeight="bold">
-              PREVIOUS EVENTS
-            </Heading>
-            <SimpleGrid columns={3} spacing={6}>
+            <EventHeading>PREVIOUS EVENTS</EventHeading>
+            <SimpleGrid
+              columns={3}
+              spacing={6}
+              gridTemplateColumns="repeat(auto-fit, minmax(250px, 317px))"
+              width="full"
+            >
               {archived.map((event) => (
                 <EventArchived key={event.id} event={event} />
               ))}

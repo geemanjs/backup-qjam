@@ -1,18 +1,13 @@
-import * as React from 'react';
-import {
-  Avatar,
-  Badge,
-  Box,
-  Heading,
-} from '@chakra-ui/react';
-import { Event } from '../../../types';
-import styled from '@emotion/styled'
-import { EventImageBottom } from './EventImageBottom';
-import Link from 'next/link';
-import { ForceNoDecoration } from '../../ForceNoDecoration';
-import {ABlank, ABlankLineHover} from "../../ABlank";
-import {ListItem, ListItemLeft, ListItemTitle} from "../../ListItem";
-import {truncateDescription} from "../../../services/Utils/truncateDescription";
+import * as React from "react";
+import { Avatar, Badge, Box, Heading } from "@chakra-ui/react";
+import { Event } from "../../../types";
+import styled from "@emotion/styled";
+import { EventImageBottom } from "./EventImageBottom";
+import Link from "next/link";
+import { ForceNoDecoration } from "../../ForceNoDecoration";
+import { ABlank, ABlankLineHover } from "../../ABlank";
+import { ListItem, ListItemLeft, ListItemTitle } from "../../ListItem";
+import { truncateDescription } from "../../../services/Utils/truncateDescription";
 
 interface IEventProps {
   event: Event;
@@ -20,39 +15,19 @@ interface IEventProps {
 
 //  Rounded badge corners
 //  language=SCSS
-const BadgeHolder = styled.div`
-  & {
-    position: absolute;
-    bottom: 0;
-    padding-bottom: 10px;
-  }
-
-  ${Badge} {
-    border-radius: 0;
-  }
-
-  ${Badge}:first-of-type {
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
-  }
-
-  ${Badge}:last-of-type {
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
-  }
-`;
+const BadgeHolder = styled.div``;
 
 export class EventLive extends React.Component<IEventProps> {
   render() {
     const { event, ...other } = this.props;
     return (
-      <Box {...other}>
-        <Link href={`/events/${event.id}`} >
+      <Box {...other} bg="white" borderRadius="md" boxShadow="md">
+        <Link href={`/events/${event.id}`}>
           <ABlank>
             <Box
-              width={1}
+              width="100%"
               p={2}
-              style={{ height: '200px', position: 'relative' }}
+              style={{ height: "200px", position: "relative" }}
               height="320px"
               boxShadow="none"
               borderRadius="0px"
@@ -62,9 +37,24 @@ export class EventLive extends React.Component<IEventProps> {
               backgroundSize="cover"
             >
               <EventImageBottom style={{ paddingBottom: 80 }}>
-                <BadgeHolder>
-                  <Badge bg="red">LIVE</Badge>
-                </BadgeHolder>
+                <Badge
+                  colorScheme="red"
+                  variant="solid"
+                  size="md"
+                  px={2}
+                  py="2px"
+                  borderRadius="0"
+                  _last={{
+                    borderTopRightRadius: "4px",
+                    borderBottomRightRadius: "4px",
+                  }}
+                  _first={{
+                    borderTopLeftRadius: "4px",
+                    borderBottomLeftRadius: "4px",
+                  }}
+                >
+                  LIVE
+                </Badge>
               </EventImageBottom>
             </Box>
           </ABlank>
@@ -76,17 +66,19 @@ export class EventLive extends React.Component<IEventProps> {
           >
             <ABlankLineHover>
               <ListItem>
-                <ListItemLeft>
-                  <Avatar size="sm" src={event.artistProfilePicLoc} />
+                <ListItemLeft mr={2}>
+                  <Avatar size="md" src={event.artistProfilePicLoc} />
                 </ListItemLeft>
-                <ListItemTitle fontWeight="bold">{event.hostName}</ListItemTitle>
+                <ListItemTitle fontWeight="bold">
+                  {event.hostName}
+                </ListItemTitle>
               </ListItem>
             </ABlankLineHover>
           </Link>
           <Link passHref={true} href={`/events/${event.id}`}>
             <ABlankLineHover>
               <Box px={2} pt={2} pb={1}>
-                <Heading as={'h3'} fontSize="lg" fontWeight={500}>
+                <Heading as={"h3"} fontSize="lg" fontWeight={500}>
                   {event.title}
                 </Heading>
                 <ForceNoDecoration whiteSpace="pre-wrap" fontSize="md" pt={1}>

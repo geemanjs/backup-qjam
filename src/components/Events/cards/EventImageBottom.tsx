@@ -1,10 +1,22 @@
 //  language=SCSS
-import { PropsWithChildren } from 'react';
-import { Flex } from '@chakra-ui/react';
+import { PropsWithChildren } from "react";
+import { Flex } from "@chakra-ui/react";
 
-export const EventImageBottom = ({children}: PropsWithChildren<any>) => {
-  return <Flex position="absolute" bottom={0} right={0} left={0} padding={2} flexWrap="wrap" background="linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75))">{children}</Flex>
-}
+export const EventImageBottom = ({ children }: PropsWithChildren<any>) => {
+  return (
+    <Flex
+      position="absolute"
+      bottom={0}
+      right={0}
+      left={0}
+      padding={2}
+      flexWrap="wrap"
+      background="linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75))"
+    >
+      {children}
+    </Flex>
+  );
+};
 
 // export const EventImageBottom = styled('div')`
 //   & {
