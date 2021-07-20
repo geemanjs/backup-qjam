@@ -26,7 +26,7 @@ export const ListItem = (props: any) => {
 
   if (ListItemLeft && Title && Subtitle) {
     const { children, ...other } = props;
-    const flexExtras = { style: { flexGrow: 1 } };
+    const flexExtras = { style: { flex: 1 } };
     return (
       <Flex p={2} flexDirection="row" alignItems="center" {...other}>
         {ListItemLeft}

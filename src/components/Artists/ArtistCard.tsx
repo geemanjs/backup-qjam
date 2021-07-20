@@ -21,6 +21,7 @@ export const ArtistCard = ({ artist, source, ...other }: IArtistProps) => {
   const followers = formatFollowerCount(artist.followerCount);
   return (
     <Flex
+      color="white"
       height="195px"
       borderRadius="md"
       boxShadow="md"

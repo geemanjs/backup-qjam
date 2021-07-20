@@ -21,7 +21,13 @@ export class EventLive extends React.Component<IEventProps> {
   render() {
     const { event, ...other } = this.props;
     return (
-      <Box {...other} bg="white" borderRadius="md" boxShadow="md">
+      <Box
+        {...other}
+        bg="white"
+        borderRadius="md"
+        boxShadow="md"
+        overflow="hidden"
+      >
         <Link href={`/events/${event.id}`}>
           <ABlank>
             <Box
@@ -30,7 +36,6 @@ export class EventLive extends React.Component<IEventProps> {
               style={{ height: "200px", position: "relative" }}
               height="320px"
               boxShadow="none"
-              borderRadius="0px"
               backgroundImage={`url('${event.eventPic.loc}')`}
               backgroundRepeat="no-repeat"
               backgroundPosition="center"

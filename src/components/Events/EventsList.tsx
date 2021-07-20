@@ -3,7 +3,7 @@ import * as React from "react";
 import { Event } from "../../types";
 import { EventLive } from "./cards/EventLiveCard";
 import { EventUpcomingCard } from "./cards/EventUpcomingCard";
-import { EventArchived } from "./cards/EventArchivedCard";
+import { EventArchivedCard } from "./cards/EventArchivedCard";
 import { refreshAt } from "../../services/Utils/refreshAt";
 
 const EventHeading = ({ children }) => {
@@ -86,7 +86,7 @@ export class EventsList extends React.Component<{
               width="full"
             >
               {archived.map((event) => (
-                <EventArchived key={event.id} event={event} />
+                <EventArchivedCard key={event.id} event={event} />
               ))}
             </SimpleGrid>
           </Box>

@@ -29,7 +29,13 @@ export const EventUpcomingCard = ({ event, ...other }: IEventProps) => {
   const queueCount = formatQueueCount(event.queueCount);
 
   return (
-    <Box {...other} bg="white" borderRadius="md" boxShadow="md">
+    <Box
+      {...other}
+      bg="white"
+      borderRadius="md"
+      boxShadow="md"
+      overflow="hidden"
+    >
       <Link passHref={true} href={`/events/${event.id}`}>
         <ABlank>
           <Box
@@ -38,7 +44,6 @@ export const EventUpcomingCard = ({ event, ...other }: IEventProps) => {
             style={{ height: "200px", position: "relative" }}
             height="320px"
             boxShadow="none"
-            borderRadius="0px"
             backgroundImage={`url('${event.eventPic.loc}')`}
             backgroundRepeat="no-repeat"
             backgroundPosition="center"

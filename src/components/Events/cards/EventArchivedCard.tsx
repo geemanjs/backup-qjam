@@ -19,7 +19,7 @@ interface IEventProps {
   event: Event;
 }
 
-export const EventArchived = ({ event, ...other }: IEventProps) => {
+export const EventArchivedCard = ({ event, ...other }: IEventProps) => {
   return (
     <Box
       {...other}
@@ -36,7 +36,6 @@ export const EventArchived = ({ event, ...other }: IEventProps) => {
             style={{ height: "200px", position: "relative" }}
             height="320px"
             boxShadow="none"
-            borderRadius="0px"
             backgroundImage={`url('${
               process.env.NEXT_PUBLIC_CLOUDFRONT_VIDEO_THUMBNAIL_API
             }/${event.videoThumbnail ? event.videoThumbnail : ""}')`}
@@ -101,4 +100,4 @@ export const EventArchived = ({ event, ...other }: IEventProps) => {
   );
 };
 
-EventArchived.defaultProps = {};
+EventArchivedCard.defaultProps = {};
