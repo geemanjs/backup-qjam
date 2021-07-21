@@ -20,7 +20,6 @@ const NavLink = ({
 }: React.PropsWithChildren<LinkProps>) => {
   return (
     <ChakraLink
-      color="green.500"
       fontSize="lg"
       fontWeight="bold"
       pt="4px"
@@ -41,14 +40,14 @@ const NavLink = ({
 
 export const Header = (props: BoxProps) => (
   <Box
-    color="white"
+    color="green.500"
     bg="neutral.800"
     py={6}
     position="relative"
     zIndex="100"
     {...props}
   >
-    <Container>
+    <Container px={6}>
       <Flex justifyContent="space-between" alignItems="center" color="white">
         <Link href="/" passHref={true}>
           <ABlank>

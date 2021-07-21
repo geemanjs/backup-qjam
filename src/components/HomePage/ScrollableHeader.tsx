@@ -38,7 +38,7 @@ export const ScrollableHeader = ({
       </Flex>
     </Container>
     <Grid
-      gridTemplateColumns="calc((100% - 900px) / 2) fit-content(900px) calc((100% - 900px) / 2)"
+      gridTemplateColumns="calc((100% - 1024px) / 2) fit-content(1024px) calc((100% - 1024px) / 2)"
       ml="auto"
       overflowX="auto"
       css={{

@@ -11,6 +11,10 @@ import {
   HStack,
   Flex,
 } from "@chakra-ui/react";
+import NextImage from "next/image";
+import facebook from "../../../public/img/icons/facebookLogo@3x.png";
+import instagram from "../../../public/img/icons/instagramLogo@3x.png";
+import twitter from "../../../public/img/icons/twitter@3x.png";
 
 export const Footer = () => {
   return (
@@ -60,10 +64,25 @@ export const Footer = () => {
                 </Box>
                 <Box minW="100px">
                   <FooterHeading mb="4">Follow us</FooterHeading>
-                  <HStack color="white">
-                    <Link>Facebook</Link>
-                    <Link>Twitter</Link>
-                    <Link>Instagram</Link>
+                  <HStack color="white" spacing={6}>
+                    <Box
+                      as="a"
+                      href={process.env.NEXT_PUBLIC_SOCIAL_FACEBOOK_LINK}
+                    >
+                      <NextImage src={facebook} />
+                    </Box>
+                    <Box
+                      as="a"
+                      href={process.env.NEXT_PUBLIC_SOCIAL_TWITTER_LINK}
+                    >
+                      <NextImage src={twitter} />
+                    </Box>
+                    <Box
+                      as="a"
+                      href={process.env.NEXT_PUBLIC_SOCIAL_INSTAGRAM_LINK}
+                    >
+                      <NextImage src={instagram} />
+                    </Box>
                   </HStack>
                   <Text mt={2} color="white" fontWeight="bold">
                     &copy; QJAM 2021

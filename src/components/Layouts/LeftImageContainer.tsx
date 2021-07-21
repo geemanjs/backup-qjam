@@ -20,7 +20,7 @@ export const LeftImageContainer = ({
   ...other
 }: React.PropsWithChildren<
   {
-    heading: string;
+    heading: string | any;
     image: { size?: string; src: string; alt: string };
   } & BoxProps
 >) => {

@@ -33,6 +33,7 @@ export const HomePageHeader = () => {
         <SimpleGrid columns={topVideos.length} position="relative">
           {topVideos.map((video) => (
             <video
+              key={video}
               autoPlay={true}
               muted={true}
               loop={true}
@@ -62,11 +63,11 @@ export const HomePageHeader = () => {
         </Box>
       </Box>
       <Box bg="neutral.900" boxShadow="md">
-        <Container py={12} color="white" textAlign="center">
+        <Container py={16} color="white" textAlign="center">
           <Heading fontSize="5xl" mb={6}>
             Meet your favourite artists.
           </Heading>
-          <Text fontSize="xl">
+          <Text fontSize="xl" maxWidth="640px" ml="auto" mr="auto">
             Live video chat with your hero, receive a personalised digital
             signing and connect with thousands of other fans.
           </Text>
@@ -75,6 +76,7 @@ export const HomePageHeader = () => {
       <SimpleGrid columns={bottomVideos.length} position="relative">
         {bottomVideos.map((video) => (
           <video
+            key={video}
             autoPlay={true}
             muted={true}
             loop={true}
@@ -96,6 +98,25 @@ export const HomePageHeader = () => {
           bgGradient="linear(to-r, blue.300, green.300)"
           mixBlendMode="multiply"
         ></Box>
+        <Box position="absolute" left={0} right={0}>
+          <Container
+            py={10}
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+          >
+            <Box mr={4}>
+              <a href={process.env.NEXT_PUBLIC_ITUNES_APP_LINK}>
+                <Image alt="Download on app store" src={appleDownload} />
+              </a>
+            </Box>
+            <Box>
+              <a href={process.env.NEXT_PUBLIC_ANDROID_APP_LINK}>
+                <Image alt="Download on play store" src={androidDownload} />
+              </a>
+            </Box>
+          </Container>
+        </Box>
       </SimpleGrid>
     </>
   );

@@ -6,6 +6,7 @@ import {
   Circle,
   Flex,
   Heading,
+  HStack,
   Image,
   Text,
   VStack,
@@ -21,6 +22,10 @@ import { PostEventBuzz } from "../components/ForArtists/PostEventBuzz";
 import { GoLive } from "../components/ForArtists/GoLive";
 import { DigitalMemories } from "../components/ForArtists/DigitalMemories";
 import { ShareableMemories } from "../components/ForArtists/ShareableMemories";
+import appleDownload from "../../public/img/apple/download.png";
+import androidDownload from "../../public/img/google/download.png";
+import NextImage from "next/image";
+import { DownloadLinks } from "../components/DownloadLinks";
 
 const Index = ({
   artists,
@@ -70,7 +75,7 @@ const Index = ({
           <VStack>
             <Heading fontSize="5xl">Reach fans globally</Heading>
             <Text fontSize="xl">
-              QJAM has been used by fans in over 80 countries and they can't
+              QJAM has been used by fans in over 80 countries and they can&apos;t
               wait to meet you.
             </Text>
           </VStack>
@@ -87,6 +92,7 @@ const Index = ({
             <Text fontSize="xl" fontWeight={400}>
               Download the free app now and sign up as an artist to get started.
             </Text>
+            <DownloadLinks />
           </VStack>
         </Container>
       </Box>

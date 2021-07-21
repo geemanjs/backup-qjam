@@ -8,10 +8,6 @@ export default class Document extends NextDocument {
       <Html lang="en-gb" prefix="og: http://ogp.me/ns#">
         <Head>
           <meta charSet="utf-8" />
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-          />
           <meta property="fb:app_id" content="1443618142549899" />
           <meta httpEquiv="Accept-CH" content="DPR, Viewport-Width, Width" />
           <link rel="icon" href="/favicon.ico" />
@@ -91,15 +87,6 @@ export default class Document extends NextDocument {
             `,
             }}
           />
-          <noscript>
-            <img
-              alt=""
-              height="1"
-              width="1"
-              src="https://www.facebook.com/tr?id=494508264500162&ev=PageView
-          &noscript=1"
-            />
-          </noscript>
         </Head>
         <body>
           {/* Make Color mode to persists when you refresh the page. */}

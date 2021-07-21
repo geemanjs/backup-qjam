@@ -2,6 +2,9 @@ import numeral from "numeral";
 
 export const formatQueueCount = (count: number | undefined) => {
   let queueCount;
+  if(!count) {
+    return "The Q is empty"
+  }
   if (count > 1) {
     let format = "";
     if (count <= 1000) {

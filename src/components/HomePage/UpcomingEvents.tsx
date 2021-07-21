@@ -23,12 +23,12 @@ export const Events = ({
         gridTemplateColumns="repeat(auto-fill,minmax(314px, 1fr))"
       >
         {type === "UPCOMING" &&
-          events.map((upcomingEvent) => (
-            <EventUpcomingCard event={upcomingEvent} />
+          events.map((event) => (
+            <EventUpcomingCard key={event.id} event={event} />
           ))}
         {type === "ARCHIVED" &&
-          events.map((upcomingEvent) => (
-            <EventArchivedCard event={upcomingEvent} />
+          events.map((event) => (
+            <EventArchivedCard key={event.id} event={event} />
           ))}
       </SimpleGrid>
     </ScrollableHeader>

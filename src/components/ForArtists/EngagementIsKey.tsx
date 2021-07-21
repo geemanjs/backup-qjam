@@ -49,7 +49,7 @@ export const EngagementIsKey = () => (
             </Text>
           </Flex>
           <Flex mt={6} ml={8} alignItems="center">
-            <Image src={spotify} height="50px" width="50px" />
+            <Image src={spotify} height="50px" width="50px" alt=""/>
             <Text fontFamily="Lato" fontSize="2xl" ml={3} fontWeight="black">
               Spotify
             </Text>

@@ -13,10 +13,6 @@ interface IEventProps {
   event: Event;
 }
 
-//  Rounded badge corners
-//  language=SCSS
-const BadgeHolder = styled.div``;
-
 export class EventLive extends React.Component<IEventProps> {
   render() {
     const { event, ...other } = this.props;
@@ -28,7 +24,7 @@ export class EventLive extends React.Component<IEventProps> {
         boxShadow="md"
         overflow="hidden"
       >
-        <Link href={`/events/${event.id}`}>
+        <Link href={`/events/${event.id}`} passHref={true}>
           <ABlank>
             <Box
               width="100%"

@@ -61,7 +61,7 @@ export const EngagementStrategies = () => (
           Engagement Strategies
         </Heading>
         {strategies.map((strategy) => (
-          <ListItem py={4} px={8}>
+          <ListItem py={4} px={8} key={strategy.title}>
             <ListItemLeft mr={2} alignSelf="flex-start" justifyContent="center">
               <Image src={strategy.icon} alt="" height="48px" width="48px" />
             </ListItemLeft>

@@ -14,7 +14,7 @@ export const FeaturedArtists = ({ artists }: { artists: Artist[] }) => {
         gridTemplateRows="min-content min-content"
       >
         {artists.map((artist) => (
-          <ArtistCard source="FEATURED" artist={artist} />
+          <ArtistCard key={artist.id} source="FEATURED" artist={artist} />
         ))}
       </SimpleGrid>
     </ScrollableHeader>

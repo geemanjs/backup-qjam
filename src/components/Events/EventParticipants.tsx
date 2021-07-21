@@ -36,6 +36,15 @@ export const buildParticipantHeader = (event: Event) => {
   return "";
 };
 
+const Participant = ({ id, profileImage, name }: {id: string, profileImage: string, name: string}) => (
+  <ListItem key={id} py={3}>
+    <ListItemLeft mr={2}>
+      <Avatar size="sm" src={profileImage} />
+    </ListItemLeft>
+    <ListItemTitle fontWeight={500}>{name}</ListItemTitle>
+  </ListItem>
+);
+
 export const EventParticipants = ({ event }: { event: Event }) => (
   <Box boxShadow="md" px={2} bg="white" borderRadius="md">
     <Heading p={2} fontWeight={600} fontSize="lg" textAlign="center">
@@ -43,22 +52,22 @@ export const EventParticipants = ({ event }: { event: Event }) => (
     </Heading>
     {event.archivedParticipants &&
       event.archivedParticipants.map((jammer) => (
-        <ListItem key={jammer.id}>
-          <ListItemLeft>
-            <Avatar size="sm" src={jammer.profileImage} />
-          </ListItemLeft>
-          <ListItemTitle fontWeight={500}>{jammer.displayName}</ListItemTitle>
-        </ListItem>
+        <Participant
+          id={jammer.id}
+          name={jammer.displayName}
+          profileImage={jammer.profileImage}
+          key={jammer.id}
+        />
       ))}
     {event.type !== "BROADCAST" &&
       event.queuers &&
       event.queuers.map((jammer) => (
-        <ListItem key={jammer.id}>
-          <ListItemLeft>
-            <Avatar size="sm" src={jammer.profileImage} />
-          </ListItemLeft>
-          <ListItemTitle fontWeight={500}>{jammer.name}</ListItemTitle>
-        </ListItem>
+        <Participant
+          id={jammer.id}
+          name={jammer.name}
+          profileImage={jammer.profileImage}
+          key={jammer.id}
+        />
       ))}
   </Box>
 );

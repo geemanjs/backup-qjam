@@ -8,10 +8,11 @@ import { VideoEventPrivate } from "../../../components/Events/VideoEventPrivate"
 import { VideoEventArchived } from "../../../components/Events/VideoEventArchived";
 import { EventInfo } from "../../../components/Events/EventInfo";
 import { VideoEventLive } from "../../../components/Events/VideoEventLive";
-import { Box, Flex, Link, Text } from "@chakra-ui/react";
+import { Box, Flex, Link, Text, VStack } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { VideoEventScheduled } from "../../../components/Events/VideoEventScheduled";
 import { EventParticipants } from "../../../components/Events/EventParticipants";
+import { DownloadLinks } from "../../../components/DownloadLinks";
 
 const ViewEvent = ({ event }: { event: Event }) => {
   const { query } = useRouter();
@@ -64,41 +65,13 @@ const ViewEvent = ({ event }: { event: Event }) => {
                 bg="white"
                 borderRadius="md"
               >
-                <Flex
-                  alignItems="center"
-                  justifyContent="center"
-                  flexDirection="column"
-                >
-                  <Text
-                    fontSize="md"
-                    textAlign="center"
-                    mb={3}
-                    fontWeight={500}
-                  >
-                    Want to chat with {event.hostName}?<br /> Download the QJAM
-                    app for free.
+                <VStack textAlign="center" spacing={6}>
+                  <Text fontSize="lg">
+                    Want to chat with <strong>{event.hostName}?</strong>
                   </Text>
-                  <Link href={process.env.ITUNES_APP_LINK}>
-                    <a>
-                      <img
-                        src="/img/apple/download-on-app-store-dark.svg"
-                        height="48px"
-                        width="144px"
-                        alt="Download on app store"
-                      />
-                    </a>
-                  </Link>
-                  <Link href={process.env.ANDROID_APP_LINK}>
-                    <a>
-                      <img
-                        src="/img/google/Get_it_on_Google_play.svg"
-                        height="48px"
-                        width="144px"
-                        alt="Get it on Google Play"
-                      />
-                    </a>
-                  </Link>
-                </Flex>
+                  <Text fontSize="lg">Download the QJAM app for free.</Text>
+                  <DownloadLinks isDark={true} />
+                </VStack>
               </Box>
             </Box>
           </Flex>

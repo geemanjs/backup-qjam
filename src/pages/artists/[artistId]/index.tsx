@@ -25,6 +25,9 @@ import {
 import { htmlify } from "../../../services/Utils/htmlify";
 import { EventsList } from "../../../components/Events/EventsList";
 import styled from "@emotion/styled";
+import { Header } from "../../../components/Layouts/Header";
+import { ArtistSong } from "../../../components/Artists/ArtistSong";
+import {DownloadLinks} from "../../../components/DownloadLinks";
 
 interface IProps {
   artist: Artist;
@@ -81,7 +84,7 @@ export const ArtistView = ({
 }: IProps) => {
   const followers = formatFollowerCount(artist.followerCount);
   return (
-    <StandardLayout>
+    <StandardLayout withDefaultHeader={false}>
       <NextSeo {...seoConfig(artist)} />
       <Container px={0}>
         <Box
@@ -94,10 +97,14 @@ export const ArtistView = ({
           backgroundPosition="center"
           backgroundSize="cover"
         >
-          {/*<Header*/}
-          {/*  bg="transparent"*/}
-          {/*  style={{ background: 'linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0))' }}*/}
-          {/*/>*/}
+          <Header
+            color="white"
+            bg="transparent"
+            style={{
+              background:
+                "linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0))",
+            }}
+          />
           <EventImageBottom>
             <Flex
               justifyContent="space-between"
@@ -143,27 +150,7 @@ export const ArtistView = ({
             Download the app to find out how:
             <br />
             <br />
-            <Link href={process.env.NEXT_PUBLIC_ITUNES_APP_LINK}>
-              <a>
-                <img
-                  src="/static/img/apple/download-on-app-store.svg"
-                  height="57px"
-                  width="171px"
-                  alt="Download on the App Store"
-                />
-              </a>
-            </Link>
-            &nbsp;
-            <Link href={process.env.NEXT_PUBLIC_ANDROID_APP_LINK}>
-              <a>
-                <img
-                  src="/static/img/google/Get_it_on_Google_play.svg"
-                  height="60px"
-                  width="180px"
-                  alt="Get it on Google Play"
-                />
-              </a>
-            </Link>
+            <DownloadLinks isDark={true}/>
           </Text>
         )}
         {artist.bio && !artist.isUnclaimed && (
@@ -186,19 +173,19 @@ export const ArtistView = ({
       </Container>
       {artist.music && artist.music.tracks && (
         <React.Fragment>
-          <Container pb={[4, 4, 2]}>
+          <Container pb={[4, 4, 2]} mt={8}>
             <div style={{ position: "relative" }}>
               <Heading
                 textAlign={["left", "left", "center"]}
                 pb={3}
-                fontSize="md"
+                fontSize="4xl"
               >
                 FEATURED MUSIC
               </Heading>
               <Heading
                 textAlign={["left", "left", "center"]}
                 pb={3}
-                fontSize="md"
+                fontSize="lg"
               >
                 {artist.music.title}
                 {artist.music.releaseDate && (
@@ -216,7 +203,7 @@ export const ArtistView = ({
                         as="a"
                         bg="teal.400"
                         color="white"
-                        borderRadius="lg"
+                        borderRadius="full"
                       >
                         View on Spotify
                       </Button>
@@ -231,10 +218,10 @@ export const ArtistView = ({
                   >
                     <Link href={artist.appleMusicUrl} passHref={true}>
                       <Button
+                        borderRadius="full"
                         as="a"
                         bg="teal.400"
                         color="white"
-                        borderRadius="lg"
                       >
                         View on Apple Music
                       </Button>
@@ -244,16 +231,18 @@ export const ArtistView = ({
               </ViewOnMusicServiceWrapper>
             </div>
           </Container>
-          <Box bg="white" pt={0} pb={3} p={0}>
+          <Container bg="white" pt={0} pb={3} p={3}>
             {artist.music.tracks.map((song: MusicTrack, index) => (
               <Box
                 _even={{ backgroundColor: "rgba(0, 0, 0, 0.1)" }}
                 _hover={{ backgroundColor: "#49b8ab", color: "#fff" }}
                 key={index}
                 song={song}
-              />
+              >
+                <ArtistSong song={song} />
+              </Box>
             ))}
-          </Box>
+          </Container>
         </React.Fragment>
       )}
     </StandardLayout>
@@ -277,6 +266,7 @@ export const getStaticProps: GetStaticProps<IProps, { artistId: string }> =
     }
     const { artistId } = context.params;
     const artist = await ArtistService.get(artistId);
+    console.log(artist);
     const [upcomingEvents, archivedEvents, liveEvents] = await Promise.all([
       EventsService.upcomingByHost(artist.id),
       EventsService.archivedByHost(artist.id),

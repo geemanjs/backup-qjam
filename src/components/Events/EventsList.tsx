@@ -1,12 +1,13 @@
-import { Box, Heading, SimpleGrid } from "@chakra-ui/react";
+import {Box, Heading, HeadingProps} from "@chakra-ui/react";
 import * as React from "react";
 import { Event } from "../../types";
 import { EventLive } from "./cards/EventLiveCard";
 import { EventUpcomingCard } from "./cards/EventUpcomingCard";
 import { EventArchivedCard } from "./cards/EventArchivedCard";
 import { refreshAt } from "../../services/Utils/refreshAt";
+import { StandardGrid } from "../StandardGrid";
 
-const EventHeading = ({ children }) => {
+const EventHeading = ({ children, ...other }: React.PropsWithChildren<HeadingProps>) => {
   return (
     <Heading
       textAlign="center"
@@ -15,6 +16,7 @@ const EventHeading = ({ children }) => {
       pt={4}
       fontWeight="bold"
       color="neutral.900"
+      {...other}
     >
       {children}
     </Heading>
@@ -47,48 +49,33 @@ export class EventsList extends React.Component<{
     return (
       <React.Fragment>
         {live && live.length > 0 && (
-          <Box mb={4}>
+          <Box mb={4} px={4}>
             <EventHeading>LIVE</EventHeading>
-            <SimpleGrid
-              columns={3}
-              spacing={6}
-              gridTemplateColumns="repeat(auto-fit, minmax(250px, 317px))"
-              width="full"
-            >
+            <StandardGrid>
               {live.map((event) => (
                 <EventLive key={event.id} event={event} />
               ))}
-            </SimpleGrid>
+            </StandardGrid>
           </Box>
         )}
         {upcoming && upcoming.length > 0 && (
-          <Box mb={4}>
+          <Box mb={4} px={4}>
             <EventHeading>UPCOMING EVENTS</EventHeading>
-            <SimpleGrid
-              columns={3}
-              spacing={6}
-              gridTemplateColumns="repeat(auto-fit, minmax(250px, 317px))"
-              width="full"
-            >
+            <StandardGrid>
               {upcoming.map((event) => (
                 <EventUpcomingCard key={event.id} event={event} />
               ))}
-            </SimpleGrid>
+            </StandardGrid>
           </Box>
         )}
         {archived && archived.length > 0 && (
-          <Box>
+          <Box px={4}>
             <EventHeading>PREVIOUS EVENTS</EventHeading>
-            <SimpleGrid
-              columns={3}
-              spacing={6}
-              gridTemplateColumns="repeat(auto-fit, minmax(250px, 317px))"
-              width="full"
-            >
+            <StandardGrid>
               {archived.map((event) => (
                 <EventArchivedCard key={event.id} event={event} />
               ))}
-            </SimpleGrid>
+            </StandardGrid>
           </Box>
         )}
       </React.Fragment>
