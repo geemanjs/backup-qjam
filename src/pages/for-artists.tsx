@@ -6,8 +6,6 @@ import {
   Circle,
   Flex,
   Heading,
-  HStack,
-  Image,
   Text,
   VStack,
 } from "@chakra-ui/react";
@@ -22,9 +20,6 @@ import { PostEventBuzz } from "../components/ForArtists/PostEventBuzz";
 import { GoLive } from "../components/ForArtists/GoLive";
 import { DigitalMemories } from "../components/ForArtists/DigitalMemories";
 import { ShareableMemories } from "../components/ForArtists/ShareableMemories";
-import appleDownload from "../../public/img/apple/download.png";
-import androidDownload from "../../public/img/google/download.png";
-import NextImage from "next/image";
 import { DownloadLinks } from "../components/DownloadLinks";
 
 const Index = ({

@@ -32,12 +32,12 @@ export const LifelongFollowers = () => (
         direction="column"
         justifyContent="center"
       >
-        <VStack spacing={4} alignItems="flex-start">
-          <Heading fontSize="6xl" mr={[0, 0, -16]} pr={[0, 0, 16]}>
+        <VStack spacing={4} alignItems={["center", "center", "flex-start"]} textAlign={["center", "center", "left"]}>
+          <Heading fontSize={["4xl", "5xl"]} mr={[0, 0, -16]}  pr={[0, 0, 16]}>
             Turn your fans into
             <br /> lifelong followers
           </Heading>
-          <Text fontSize="xl" fontWeight={600}>
+          <Text fontSize={["lg","xl"]} fontWeight={600} px={[4,4,0]}>
             QJAM redefines the meet & greet experience to make it easy for you
             to build your relationship with your followers on a global scale.
           </Text>
