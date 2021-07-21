@@ -266,7 +266,6 @@ export const getStaticProps: GetStaticProps<IProps, { artistId: string }> =
     }
     const { artistId } = context.params;
     const artist = await ArtistService.get(artistId);
-    console.log(artist);
     const [upcomingEvents, archivedEvents, liveEvents] = await Promise.all([
       EventsService.upcomingByHost(artist.id),
       EventsService.archivedByHost(artist.id),

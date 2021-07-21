@@ -31,7 +31,7 @@ export class EventInfo extends React.Component<
           </ListItemLeft>
           <ListItemTitle fontWeight="bold" fontSize="lg">
             {event.status === "ARCHIVED" && (
-              <Link passHref={true} href={`/artists/${event.host.slug}`}>
+              <Link passHref={true} href={`/artists/${event.host ? event.host.slug : ""}`}>
                 <ALink target="_blank">{event.hostName}</ALink>
               </Link>
             )}

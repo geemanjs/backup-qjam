@@ -34,7 +34,6 @@ const Index = ({
   upcomingEvents: Event[];
   previousEvents: Event[];
 }) => {
-  console.log(artists);
   return (
     <StandardLayout withDefaultHeader={false}>
       <Box bg="black" color="white" pb={12}>
