@@ -14,10 +14,13 @@ export const Events = ({
   heading: string;
   events: Event[];
 }) => {
+  if(events.length === 0) {
+    return null;
+  }
   return (
     <ScrollableHeader heading={heading} seeAllHref="/events">
       <SimpleGrid
-        gap={4}
+        gap={6}
         gridAutoFlow="column"
         gridAutoColumns="minmax(314px, 1fr)"
         gridTemplateColumns="repeat(auto-fill,minmax(314px, 1fr))"

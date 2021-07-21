@@ -42,11 +42,11 @@ export const EngagementStrategies = () => (
     justifyContent="center"
   >
     <Box
-      bg="neutral.50"
+      bg="#fbfdfe"
       borderRadius="xl"
       overflow="hidden"
       width="xl"
-      boxShadow="xl"
+      boxShadow="2xl"
       pb={8}
     >
       <Box bg="green.500" width="100%" py={2}></Box>

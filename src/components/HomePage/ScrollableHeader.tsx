@@ -25,11 +25,8 @@ export const ScrollableHeader = ({
         <Heading fontSize="5xl">{heading}</Heading>
         <Link href={seeAllHref} passHref={true}>
           <Button
+            variant="qjam"
             as="a"
-            variant="solid"
-            colorScheme="teal"
-            bg="teal.400"
-            borderRadius="80px"
             px={8}
           >
             See All

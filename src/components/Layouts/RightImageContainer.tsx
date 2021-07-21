@@ -20,7 +20,7 @@ export const RightImageContainer = ({
   ...other
 }: React.PropsWithChildren<
   {
-    heading: string;
+    heading: string| any;
     image: { size?: string; src: string; alt: string };
   } & BoxProps
 >) => {
@@ -37,12 +37,13 @@ export const RightImageContainer = ({
             <Heading
               fontSize="5xl"
               width="max-content"
-              lineHeight={1}
+              lineHeight="2.5rem"
               borderBottomColor="green.500"
               borderBottomWidth="8px"
               borderBottomStyle="solid"
-              ml={-16}
-              pl={16}
+              ml={[0, 0, 0, -16]}
+              pl={[0, 0, 0, 16]}
+              mb={[4,4,4, 0]}
               display="inline-block"
             >
               {heading}
@@ -64,7 +65,8 @@ export const RightImageContainer = ({
               float="right"
               pos="relative"
               zIndex="1"
-              h={{ lg: size }}
+              maxHeight="440px"
+              h={{ lg: size, sm: "40%" }}
               src={src}
               alt={alt}
             />

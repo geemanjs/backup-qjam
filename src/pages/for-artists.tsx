@@ -58,7 +58,7 @@ const Index = ({
         justifyContent="center"
         backgroundPosition="center"
         backgroundRepeat="no-repeat"
-        backgroundImage="url('https://res.cloudinary.com/qjam/image/upload/v1625661191/website/background-images/country-cloud.svg')"
+        backgroundImage={`url('${process.env.NEXT_PUBLIC_CLOUDINARY_IMAGE_API}/v1625661191/website/background-images/country-cloud.svg')`}
       >
         <Circle
           mt={4}
@@ -84,7 +84,7 @@ const Index = ({
       <Box bg="blue.900" color="white" py={24} px={3}>
         <Container>
           <VStack spacing={6}>
-            <Heading fontSize="5xl" fontWeight="500" textAlign="center">
+            <Heading fontSize="5xl" fontWeight="500" textAlign="center" lineHeight="3rem">
               QJAM is the go to platform for the world to engage with their
               heroes.
             </Heading>

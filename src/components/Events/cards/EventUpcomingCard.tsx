@@ -32,7 +32,7 @@ export const EventUpcomingCard = ({ event, ...other }: IEventProps) => {
     <Box
       {...other}
       bg="white"
-      borderRadius="md"
+      borderRadius="lg"
       boxShadow="md"
       overflow="hidden"
     >
@@ -99,7 +99,7 @@ export const EventUpcomingCard = ({ event, ...other }: IEventProps) => {
               <Heading as={"h3"} fontSize="lg" fontWeight={500}>
                 {event.title}
               </Heading>
-              <ForceNoDecoration whiteSpace="pre-wrap" fontSize="md" pt={1}>
+              <ForceNoDecoration whiteSpace="pre-wrap" fontSize="sm" pt={1}>
                 {truncateDescription(event.description)}
               </ForceNoDecoration>
             </Box>
@@ -120,7 +120,7 @@ export const EventUpcomingCard = ({ event, ...other }: IEventProps) => {
               src={
                 queuer.profileImage
                   ? queuer.profileImage
-                  : "/static/img/icons/no-avatar.png"
+                  : "/img/icons/no-avatar.png"
               }
             />
           ))}

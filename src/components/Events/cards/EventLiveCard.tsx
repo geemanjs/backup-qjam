@@ -20,7 +20,7 @@ export class EventLive extends React.Component<IEventProps> {
       <Box
         {...other}
         bg="white"
-        borderRadius="md"
+        borderRadius="lg"
         boxShadow="md"
         overflow="hidden"
       >
@@ -82,7 +82,7 @@ export class EventLive extends React.Component<IEventProps> {
                 <Heading as={"h3"} fontSize="lg" fontWeight={500}>
                   {event.title}
                 </Heading>
-                <ForceNoDecoration whiteSpace="pre-wrap" fontSize="md" pt={1}>
+                <ForceNoDecoration whiteSpace="pre-wrap" fontSize="sm" pt={1}>
                   {truncateDescription(event.description)}
                 </ForceNoDecoration>
               </Box>

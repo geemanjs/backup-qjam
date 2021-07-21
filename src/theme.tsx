@@ -2,7 +2,7 @@ import { extendTheme } from "@chakra-ui/react";
 import { createBreakpoints } from "@chakra-ui/theme-tools";
 
 const fonts = {
-  body: "Lato, system-ui, sans-serif",
+  body: "lato, system-ui, sans-serif",
   heading: "futura-pt, sans-serif",
 };
 
@@ -14,6 +14,20 @@ const breakpoints = createBreakpoints({
 });
 
 const theme = extendTheme({
+  components: {
+    Button: {
+      variants: {
+        qjam: {
+          borderRadius: "full",
+          background: "teal.300",
+          color: "teal.800",
+          _hover: {
+            background: "teal.400"
+          }
+        }
+      },
+    }
+  },
   styles: {
     global: {
       // styles for the `body`

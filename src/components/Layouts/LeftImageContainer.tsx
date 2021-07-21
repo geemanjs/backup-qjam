@@ -42,7 +42,8 @@ export const LeftImageContainer = ({
             <Img
               pos="relative"
               zIndex="1"
-              h={{ lg: size }}
+              maxHeight="400px"
+              h={{ lg: size, sm: "40%" }}
               src={src}
               alt={alt}
             />
@@ -50,9 +51,11 @@ export const LeftImageContainer = ({
           <Flex flex="1" maxW={{ lg: "580px" }} direction="column">
             <Heading
               fontSize="5xl"
-              lineHeight={1}
-              mr={[0, 0, -16]}
-              pr={[0, 0, 16]}
+              lineHeight="2.5rem"
+              mr={[0, 0, 0, -16]}
+              pr={[0, 0, 0, 16]}
+              mb={[4,4,4, 0]}
+
               borderBottomColor="green.500"
               borderBottomWidth="8px"
               borderBottomStyle="solid"

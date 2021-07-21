@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Stack, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Stack, Text, Container as ChakraContainer } from "@chakra-ui/react";
 import { Container } from "../Container";
 import { QuoteIcon } from "../QuoteIcon";
 import Image from "next/image";
@@ -28,7 +28,8 @@ export const EngagementIsKey = () => (
           >
             Engagement is key
           </Heading>
-          <Flex direction="row" mt={12}>
+          <ChakraContainer maxW="container.md">
+          <Flex direction="row" mt={12} >
             <QuoteIcon
               color="muted"
               mt={3}
@@ -50,10 +51,11 @@ export const EngagementIsKey = () => (
           </Flex>
           <Flex mt={6} ml={8} alignItems="center">
             <Image src={spotify} height="50px" width="50px" alt=""/>
-            <Text fontFamily="Lato" fontSize="2xl" ml={3} fontWeight="black">
+            <Text fontFamily="lato, sans-serif" fontSize="2xl" ml={3} fontWeight="black">
               Spotify
             </Text>
           </Flex>
+          </ChakraContainer>
         </Flex>
       </Stack>
     </Container>

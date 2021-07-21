@@ -44,7 +44,7 @@ export class VideoEventPrivate extends React.Component<
           height="362px"
           boxShadow="none"
           borderRadius="0px"
-          backgroundImage={`url('${process.env.NEXT_PUBLIC_CLOUDINARY_API}/website/background-images/QJAM-Private-event.png')`}
+          backgroundImage={`url('${process.env.NEXT_PUBLIC_CLOUDINARY_IMAGE_API}/website/background-images/QJAM-Private-event.png')`}
           backgroundRepeat="no-repeat"
           backgroundPosition="center"
           backgroundSize="cover"

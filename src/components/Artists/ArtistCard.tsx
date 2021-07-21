@@ -23,7 +23,7 @@ export const ArtistCard = ({ artist, source, ...other }: IArtistProps) => {
     <Flex
       color="white"
       height="195px"
-      borderRadius="md"
+      borderRadius="lg"
       boxShadow="md"
       backgroundImage={`url('${artist.coverPhoto.loc}')`}
       backgroundRepeat="no-repeat"
@@ -51,6 +51,7 @@ export const ArtistCard = ({ artist, source, ...other }: IArtistProps) => {
             fontSize="lg"
             display="flex"
             alignItems="center"
+            as={Box}
           >
             {artist.displayName}{" "}
             {artist.isVerified && !artist.isUnclaimed && (
@@ -66,8 +67,7 @@ export const ArtistCard = ({ artist, source, ...other }: IArtistProps) => {
           {source === "FEATURED" && (
             <ListItemSubTitle
               mt={-2}
-              fontSize="md"
-              fontFamily="futura-pt"
+              fontSize="sm"
               color="white"
             >
               {followers}

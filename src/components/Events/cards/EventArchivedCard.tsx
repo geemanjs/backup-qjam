@@ -24,7 +24,7 @@ export const EventArchivedCard = ({ event, ...other }: IEventProps) => {
     <Box
       {...other}
       bg="white"
-      borderRadius="md"
+      borderRadius="lg"
       boxShadow="md"
       overflow="hidden"
     >
@@ -84,16 +84,16 @@ export const EventArchivedCard = ({ event, ...other }: IEventProps) => {
           </ABlankLineHover>
         </Link>
         <Link passHref={true} href={`/events/${event.id}`}>
-          <ABlankLineHover>
+          <ABlank>
             <Box px={2} pt={2} pb={1}>
-              <Heading as={"h3"} fontSize="lg" fontWeight={500}>
+              <Heading as={"h3"} fontFamily="lato" fontSize="lg" fontWeight={600}>
                 {event.title}
               </Heading>
-              <ForceNoDecoration whiteSpace="pre-wrap" fontSize="md" pt={1}>
+              <ForceNoDecoration whiteSpace="pre-wrap" fontSize="sm" pt={1}>
                 {truncateDescription(event.description)}
               </ForceNoDecoration>
             </Box>
-          </ABlankLineHover>
+          </ABlank>
         </Link>
       </Box>
     </Box>

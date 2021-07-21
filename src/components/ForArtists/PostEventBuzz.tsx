@@ -9,7 +9,7 @@ export const PostEventBuzz = () => {
       color="white"
       heading="Post-event buzz"
       image={{
-        size: "80%",
+        size: "70%",
         src: "https://res.cloudinary.com/qjam/image/upload/v1625657566/website/background-images/tweets.png",
         alt: "Post event user tweets",
       }}

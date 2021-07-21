@@ -201,9 +201,7 @@ export const ArtistView = ({
                     <Link href={artist.spotifyUri} passHref={true}>
                       <Button
                         as="a"
-                        bg="teal.400"
-                        color="white"
-                        borderRadius="full"
+                        variant="qjam"
                       >
                         View on Spotify
                       </Button>
@@ -218,10 +216,8 @@ export const ArtistView = ({
                   >
                     <Link href={artist.appleMusicUrl} passHref={true}>
                       <Button
-                        borderRadius="full"
                         as="a"
-                        bg="teal.400"
-                        color="white"
+                        variant="qjam"
                       >
                         View on Apple Music
                       </Button>

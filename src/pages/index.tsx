@@ -80,7 +80,7 @@ const Index = ({
         }}
       >
         <Text fontSize="xl">
-          Whether it’s your name, your friends name, or a doodle, your signing
+          Whether it’s your name, your friend&apos;s name, or a doodle, your signing
           is personalised direct from artist to you to keep forever.
         </Text>
         <Text fontSize="xl" alignSelf="flex-start">
@@ -91,7 +91,7 @@ const Index = ({
       <RightImageContainer
         bg="blue.900"
         color="white"
-        heading="Share your excitement"
+        heading={<>Share your<br/>excitement</>}
         image={{
           src: "https://res.cloudinary.com/qjam/image/upload/v1625655645/website/background-images/event-lounge.png",
           alt: "Screening talent",
@@ -107,7 +107,7 @@ const Index = ({
         <Container>
           <VStack spacing={6}>
             <Heading fontSize="5xl" lineHeight={1}>
-              Are you a music artists?
+              Are you a music artist?
             </Heading>
             <Text fontSize="xl" fontWeight={300}>
               There’s a reason why QJAM is used by some of the{" "}
@@ -121,11 +121,8 @@ const Index = ({
             <Link href="/for-artists" passHref={true}>
               <Button
                 as="a"
-                variant="solid"
-                colorScheme="teal"
-                bg="teal.400"
+                variant="qjam"
                 size="lg"
-                borderRadius="full"
                 px={16}
                 fontSize="xl"
               >

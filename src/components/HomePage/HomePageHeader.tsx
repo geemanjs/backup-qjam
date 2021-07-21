@@ -6,24 +6,25 @@ import appleDownload from "../../../public/img/apple/download.png";
 import androidDownload from "../../../public/img/google/download.png";
 import * as React from "react";
 
+
 const topVideos = [
-  "https://res.cloudinary.com/qjam/video/upload/v1626798966/website/header/tini.mp4",
-  "https://res.cloudinary.com/qjam/video/upload/v1626799031/website/header/tini-fan.mp4",
-  "https://res.cloudinary.com/qjam/video/upload/v1626799041/website/header/cher.mp4",
-  "https://res.cloudinary.com/qjam/video/upload/v1626799057/website/header/liam.mp4",
-  "https://res.cloudinary.com/qjam/video/upload/v1626799042/website/header/cher-fan.mp4",
-  "https://res.cloudinary.com/qjam/video/upload/v1626799057/website/header/lg.mp4",
-  "https://res.cloudinary.com/qjam/video/upload/v1626799064/website/header/liam-fan.mp4",
+  `${process.env.NEXT_PUBLIC_CLOUDINARY_VIDEO_API}/v1626798966/website/header/tini.mp4`,
+  `${process.env.NEXT_PUBLIC_CLOUDINARY_VIDEO_API}/v1626799031/website/header/tini-fan.mp4`,
+  `${process.env.NEXT_PUBLIC_CLOUDINARY_VIDEO_API}/v1626799041/website/header/cher.mp4`,
+  `${process.env.NEXT_PUBLIC_CLOUDINARY_VIDEO_API}/v1626799057/website/header/liam.mp4`,
+  `${process.env.NEXT_PUBLIC_CLOUDINARY_VIDEO_API}/v1626799042/website/header/cher-fan.mp4`,
+  `${process.env.NEXT_PUBLIC_CLOUDINARY_VIDEO_API}/v1626799057/website/header/lg.mp4`,
+  `${process.env.NEXT_PUBLIC_CLOUDINARY_VIDEO_API}/v1626799064/website/header/liam-fan.mp4`,
 ];
 
 const bottomVideos = [
-  "https://res.cloudinary.com/qjam/video/upload/v1626809337/website/header/cher-fan-2.mp4",
-  "https://res.cloudinary.com/qjam/video/upload/v1626809353/website/header/skin.mp4",
-  "https://res.cloudinary.com/qjam/video/upload/v1626809356/website/header/lennon-fan.mp4",
-  "https://res.cloudinary.com/qjam/video/upload/v1626809362/website/header/yungblud-fan.mp4",
-  "https://res.cloudinary.com/qjam/video/upload/v1626809365/website/header/yungblud.mp4",
-  "https://res.cloudinary.com/qjam/video/upload/v1626809367/website/header/lennon.mp4",
-  "https://res.cloudinary.com/qjam/video/upload/v1626809373/website/header/tini-fan-2.mp4",
+  `${process.env.NEXT_PUBLIC_CLOUDINARY_VIDEO_API}/v1626809337/website/header/cher-fan-2.mp4`,
+  `${process.env.NEXT_PUBLIC_CLOUDINARY_VIDEO_API}/v1626809353/website/header/skin.mp4`,
+  `${process.env.NEXT_PUBLIC_CLOUDINARY_VIDEO_API}/v1626809356/website/header/lennon-fan.mp4`,
+  `${process.env.NEXT_PUBLIC_CLOUDINARY_VIDEO_API}/v1626809362/website/header/yungblud-fan.mp4`,
+  `${process.env.NEXT_PUBLIC_CLOUDINARY_VIDEO_API}/v1626809365/website/header/yungblud.mp4`,
+  `${process.env.NEXT_PUBLIC_CLOUDINARY_VIDEO_API}/v1626809367/website/header/lennon.mp4`,
+  `${process.env.NEXT_PUBLIC_CLOUDINARY_VIDEO_API}/v1626809373/website/header/tini-fan-2.mp4`,
 ];
 
 export const HomePageHeader = () => {
@@ -35,6 +36,7 @@ export const HomePageHeader = () => {
             <video
               key={video}
               autoPlay={true}
+              playsInline={true}
               muted={true}
               loop={true}
               style={{
@@ -62,7 +64,7 @@ export const HomePageHeader = () => {
           </Container>
         </Box>
       </Box>
-      <Box bg="neutral.900" boxShadow="md">
+      <Box bg="neutral.900" boxShadow="lg">
         <Container py={16} color="white" textAlign="center">
           <Heading fontSize="5xl" mb={6}>
             Meet your favourite artists.
@@ -79,6 +81,7 @@ export const HomePageHeader = () => {
             key={video}
             autoPlay={true}
             muted={true}
+            playsInline={true}
             loop={true}
             style={{
               marginLeft: "auto",

@@ -38,16 +38,17 @@ export const Footer = () => {
               justifyContent="flex-end"
             >
               <SimpleGrid
-                columns={4}
+                columns={3}
+                // columns={4} - when you add the Company / about us section
                 spacing={{ base: "10", md: "20", lg: "28" }}
                 flex="1"
               >
-                <Box minW="100px">
-                  <FooterHeading mb="4">Company</FooterHeading>
-                  <Stack color="white">
-                    <Link>About us</Link>
-                  </Stack>
-                </Box>
+                {/*<Box minW="100px">*/}
+                {/*  <FooterHeading mb="4">Company</FooterHeading>*/}
+                {/*  <Stack color="white">*/}
+                {/*    <Link>About us</Link>*/}
+                {/*  </Stack>*/}
+                {/*</Box>*/}
                 <Box minW="100px">
                   <FooterHeading mb="4">Legal</FooterHeading>
                   <Stack color="white">

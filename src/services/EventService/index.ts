@@ -10,25 +10,25 @@ import {
 } from "../../types";
 
 const apiEventToRealEvent = (apiEvent: any): Event => {
-  apiEvent.eventPic.loc = `${process.env.NEXT_PUBLIC_CLOUDINARY_API}/${apiEvent.eventPic.loc}.jpg`;
+  apiEvent.eventPic.loc = `${process.env.NEXT_PUBLIC_CLOUDINARY_IMAGE_API}/${apiEvent.eventPic.loc}.jpg`;
   apiEvent.artistProfilePicLoc = apiEvent.artistProfilePicLoc
-    ? `${process.env.NEXT_PUBLIC_CLOUDINARY_API}/${apiEvent.artistProfilePicLoc}.jpg`
-    : "/static/img/icons/no-avatar.png";
+    ? `${process.env.NEXT_PUBLIC_CLOUDINARY_IMAGE_API}/${apiEvent.artistProfilePicLoc}.jpg`
+    : "/img/icons/no-avatar.png";
   if (apiEvent.archivedParticipants) {
     apiEvent.archivedParticipants.forEach((jammer: Jammer) => {
       if (jammer.profileImage) {
-        jammer.profileImage = `${process.env.NEXT_PUBLIC_CLOUDINARY_API}/${jammer.profileImage}.jpg`;
+        jammer.profileImage = `${process.env.NEXT_PUBLIC_CLOUDINARY_IMAGE_API}/${jammer.profileImage}.jpg`;
       } else {
-        jammer.profileImage = "/static/img/icons/no-avatar.png";
+        jammer.profileImage = "/img/icons/no-avatar.png";
       }
     });
   }
   if (apiEvent.queuers) {
     apiEvent.queuers.forEach((queuer: Queuer) => {
       if (queuer.profileImage) {
-        queuer.profileImage = `${process.env.NEXT_PUBLIC_CLOUDINARY_API}/${queuer.profileImage}.jpg`;
+        queuer.profileImage = `${process.env.NEXT_PUBLIC_CLOUDINARY_IMAGE_API}/${queuer.profileImage}.jpg`;
       } else {
-        queuer.profileImage = "/static/img/icons/no-avatar.png";
+        queuer.profileImage = "/img/icons/no-avatar.png";
       }
     });
   }
