@@ -15,13 +15,13 @@ export const DownloadLinks = ({ isDark = false }: { isDark?: boolean }) => {
           {isDark ? (
             <NextImage alt="Download on app store" src={appleDarkDownload} />
           ) : (
-            <Img alt="Download on app store" src={`${process.env.NEXT_PUBLIC_CLOUDINARY_IMAGE_API}/v1627249736/website/background-images/download-on-app-store.svg`} />
+            <Img height="56px" alt="Download on app store" src={`${process.env.NEXT_PUBLIC_CLOUDINARY_IMAGE_API}/v1627249736/website/background-images/download-on-app-store.svg`} />
           )}
         </a>
       </Box>
       <Box>
         <a href={process.env.NEXT_PUBLIC_ANDROID_APP_LINK}>
-          <Img alt="Download on play store" src={`${process.env.NEXT_PUBLIC_CLOUDINARY_IMAGE_API}/v1627249932/website/background-images/google-play-badge.svg`} />
+          <Img height="56px" alt="Download on play store" src={`${process.env.NEXT_PUBLIC_CLOUDINARY_IMAGE_API}/v1627249932/website/background-images/google-play-badge.svg`} />
         </a>
       </Box>
     </Stack>
