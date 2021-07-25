@@ -1,4 +1,4 @@
-import {Box, Stack} from "@chakra-ui/react";
+import {Box, Img, Stack} from "@chakra-ui/react";
 import NextImage from "next/image";
 import appleDownload from "../../public/img/apple/download.png";
 import appleDarkDownload from "../../public/img/apple/download-dark.png";
@@ -15,13 +15,13 @@ export const DownloadLinks = ({ isDark = false }: { isDark?: boolean }) => {
           {isDark ? (
             <NextImage alt="Download on app store" src={appleDarkDownload} />
           ) : (
-            <NextImage alt="Download on app store" src={appleDownload} />
+            <Img alt="Download on app store" src={`${process.env.NEXT_PUBLIC_CLOUDINARY_IMAGE_API}/v1627249736/website/background-images/download-on-app-store.svg`} />
           )}
         </a>
       </Box>
       <Box>
         <a href={process.env.NEXT_PUBLIC_ANDROID_APP_LINK}>
-          <NextImage alt="Download on play store" src={androidDownload} />
+          <Img alt="Download on play store" src={`${process.env.NEXT_PUBLIC_CLOUDINARY_IMAGE_API}/v1627249932/website/background-images/google-play-badge.svg`} />
         </a>
       </Box>
     </Stack>
