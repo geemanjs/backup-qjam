@@ -31,6 +31,7 @@ export const Footer = () => {
           <Stack
             direction={{ base: "column", lg: "row" }}
             spacing={{ base: "10", lg: "28" }}
+            justifyContent="center"
           >
             <Stack
               direction={{ base: "column", md: "row" }}
@@ -50,21 +51,21 @@ export const Footer = () => {
                 {/*  </Stack>*/}
                 {/*</Box>*/}
                 <Box minW="100px">
-                  <FooterHeading mb="4">Legal</FooterHeading>
+                  <FooterHeading mb="4" letterSpacing={1.4}>Legal</FooterHeading>
                   <Stack color="white">
                     <Link href="/privacy">Privacy</Link>
                     <Link href="/termsOfUse">Terms of use</Link>
                   </Stack>
                 </Box>
                 <Box minW="100px">
-                  <FooterHeading mb="4">Community</FooterHeading>
+                  <FooterHeading mb="4" letterSpacing={1.4}>Community</FooterHeading>
                   <Stack color="white">
                     <Link href="/for-artists">For artists</Link>
                     <Link>Contact</Link>
                   </Stack>
                 </Box>
                 <Box minW="100px">
-                  <FooterHeading mb="4">Follow us</FooterHeading>
+                  <FooterHeading mb="4" letterSpacing={1.4}>Follow us</FooterHeading>
                   <HStack color="white" spacing={6}>
                     <Box
                       as="a"

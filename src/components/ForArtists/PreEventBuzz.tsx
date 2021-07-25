@@ -8,15 +8,19 @@ export const PreEventBuzz = () => (
     color="white"
     heading="Pre-event buzz"
     image={{
-      src: "https://res.cloudinary.com/qjam/image/upload/v1625655645/website/background-images/event-lounge.png",
+      src: `${process.env.NEXT_PUBLIC_CLOUDINARY_IMAGE_API}/v1625655645/website/background-images/eventLounge.png`,
       alt: "Screening talent",
+      css: {
+        scale: "1.9",
+        translate: "18px 178px",
+      }
     }}
   >
-    <Text fontSize="xl">
+    <Text fontSize={[ "lg", "lg", "xl" ]}>
       Schedule a QJAM event, share the link to social media, and watch as news
       of the event spreads like wildfire.
     </Text>
-    <Text fontSize="xl">
+    <Text fontSize={[ "lg", "lg", "xl" ]}>
       Fans join the Q for the chance to live video chat with you and connect
       with each other in the Event Lounge before the event starts.
     </Text>

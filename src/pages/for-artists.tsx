@@ -62,14 +62,14 @@ const Index = ({
           width="460px"
           backgroundRepeat="no-repeat"
           backgroundSize="460px"
-          backgroundImage="url('https://res.cloudinary.com/qjam/image/upload/v1625661181/website/background-images/earth.png')"
+          backgroundImage={`url('${process.env.NEXT_PUBLIC_CLOUDINARY_IMAGE_API}/v1625661181/website/background-images/earth.png')`}
           textAlign="center"
           p={8}
         >
           <VStack>
             <Heading fontSize="5xl">Reach fans globally</Heading>
-            <Text fontSize="xl">
-              QJAM has been used by fans in over 80 countries and they can&apos;t
+            <Text fontSize={[ "lg", "lg", "xl" ]}>
+              QJAM has been used by fans in over 185 countries and they can&apos;t
               wait to meet you.
             </Text>
           </VStack>
@@ -83,7 +83,7 @@ const Index = ({
               QJAM is the go to platform for the world to engage with their
               heroes.
             </Heading>
-            <Text fontSize="xl" fontWeight={400}>
+            <Text fontSize={[ "lg", "lg", "xl" ]} fontWeight={400}>
               Download the free app now and sign up as an artist to get started.
             </Text>
             <DownloadLinks />

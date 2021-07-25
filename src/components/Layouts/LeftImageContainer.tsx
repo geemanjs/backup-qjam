@@ -38,24 +38,24 @@ export const LeftImageContainer = ({
             w={{ base: "full", lg: "409px" }}
             h={{ base: "auto", lg: "409px" }}
             alignItems="center"
+            justifyContent="center"
           >
             <Img
               pos="relative"
               zIndex="1"
-              maxHeight="400px"
-              h={{ lg: size, sm: "40%" }}
+              maxHeight={["260px", "260px", "400px"]}
+              h={["20%", "20%", size]}
               src={src}
               alt={alt}
             />
           </Flex>
           <Flex flex="1" maxW={{ lg: "580px" }} direction="column">
             <Heading
-              fontSize="5xl"
-              lineHeight="2.5rem"
+              fontSize={["4xl", "4xl", "5xl"]}
+              lineHeight={["2rem", "2.5rem"]}
               mr={[0, 0, 0, -16]}
               pr={[0, 0, 0, 16]}
               mb={[4,4,4, 0]}
-
               borderBottomColor="green.500"
               borderBottomWidth="8px"
               borderBottomStyle="solid"

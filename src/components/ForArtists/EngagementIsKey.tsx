@@ -16,7 +16,6 @@ export const EngagementIsKey = () => (
       >
         <Flex flex="1" direction="column">
           <Heading
-            fontSize="5xl"
             width="max-content"
             lineHeight={1}
             borderBottomColor="green.500"

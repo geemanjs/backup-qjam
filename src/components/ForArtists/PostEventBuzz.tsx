@@ -10,11 +10,11 @@ export const PostEventBuzz = () => {
       heading="Post-event buzz"
       image={{
         size: "70%",
-        src: "https://res.cloudinary.com/qjam/image/upload/v1625657566/website/background-images/tweets.png",
+        src: `${process.env.NEXT_PUBLIC_CLOUDINARY_IMAGE_API}/v1625657566/website/background-images/tweets.png`,
         alt: "Post event user tweets",
       }}
     >
-      <Text fontSize="xl">
+      <Text fontSize={[ "lg", "lg", "xl" ]}>
         After the event has ended, watch as the wave of excitement about their
         QJAM experience floods social media.
       </Text>

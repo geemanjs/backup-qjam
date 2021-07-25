@@ -10,11 +10,11 @@ export const DigitalMemories = () => {
       heading="Digital Signings"
       image={{
         size: "70%",
-        src: "https://res.cloudinary.com/qjam/image/upload/v1625655626/website/background-images/signing.jpg",
+        src: `${process.env.NEXT_PUBLIC_CLOUDINARY_IMAGE_API}/v1625655626/website/background-images/signing.jpg`,
         alt: "Signing",
       }}
     >
-      <Text fontSize="xl">
+      <Text fontSize={[ "lg", "lg", "xl" ]}>
         Send your fans a personalised signing during your 1-to-1 live video chat
         that they can treasure forever.
       </Text>

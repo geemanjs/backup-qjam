@@ -1,4 +1,4 @@
-import { Box, HStack } from "@chakra-ui/react";
+import {Box, Stack} from "@chakra-ui/react";
 import NextImage from "next/image";
 import appleDownload from "../../public/img/apple/download.png";
 import appleDarkDownload from "../../public/img/apple/download-dark.png";
@@ -7,7 +7,9 @@ import * as React from "react";
 
 export const DownloadLinks = ({ isDark = false }: { isDark?: boolean }) => {
   return (
-    <HStack spacing={4}>
+    <Stack spacing={[1, 4]}
+           direction={["column", "row"]}
+     >
       <Box>
         <a href={process.env.NEXT_PUBLIC_ITUNES_APP_LINK}>
           {isDark ? (
@@ -22,6 +24,6 @@ export const DownloadLinks = ({ isDark = false }: { isDark?: boolean }) => {
           <NextImage alt="Download on play store" src={androidDownload} />
         </a>
       </Box>
-    </HStack>
+    </Stack>
   );
 };

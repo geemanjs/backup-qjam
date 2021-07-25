@@ -22,7 +22,7 @@ export const LifelongFollowers = () => (
           ml={-10}
           boxShadow="xl"
           h={{ lg: "100%" }}
-          src="https://res.cloudinary.com/qjam/image/upload/v1625655611/website/background-images/liam-signing.png"
+          src={`${process.env.NEXT_PUBLIC_CLOUDINARY_IMAGE_API}/v1625655611/website/background-images/liam-signing.png`}
           alt="Signing"
         />
       </Flex>

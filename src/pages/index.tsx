@@ -46,19 +46,21 @@ const Index = ({
         events={previousEvents}
       />
       <RightImageContainer
+        mt={8}
+
         bg="neutral.900"
         color="white"
         heading="Go Live"
         image={{
-          src: "https://res.cloudinary.com/qjam/image/upload/v1625655622/website/background-images/livestream.png",
+          src: `${process.env.NEXT_PUBLIC_CLOUDINARY_IMAGE_API}/v1625655622/website/background-images/livestream.png`,
           alt: "Event lounge",
         }}
       >
-        <Text fontSize="xl">
+        <Text fontSize={[ "lg", "lg", "xl" ]}>
           Join the Q of an event for your chance to be chosen to live video chat
           with your favourite artist.
         </Text>
-        <Text fontSize="xl">
+        <Text fontSize={[ "lg", "lg", "xl" ]}>
           A recording of your video chat will be ready for you after the event
           to save and share.
         </Text>
@@ -75,15 +77,15 @@ const Index = ({
         }
         image={{
           size: "70%",
-          src: "https://res.cloudinary.com/qjam/image/upload/v1625655626/website/background-images/signing.jpg",
+          src: `${process.env.NEXT_PUBLIC_CLOUDINARY_IMAGE_API}/v1625655626/website/background-images/signing.jpg`,
           alt: "Signing",
         }}
       >
-        <Text fontSize="xl">
+        <Text fontSize={[ "lg", "lg", "xl" ]}>
           Whether it’s your name, your friend&apos;s name, or a doodle, your signing
           is personalised direct from artist to you to keep forever.
         </Text>
-        <Text fontSize="xl" alignSelf="flex-start">
+        <Text fontSize={[ "lg", "lg", "xl" ]} alignSelf="flex-start">
           Save it. Share it. Print it. Brag about it.
         </Text>
       </LeftImageContainer>
@@ -93,28 +95,28 @@ const Index = ({
         color="white"
         heading={<>Share your<br/>excitement</>}
         image={{
-          src: "https://res.cloudinary.com/qjam/image/upload/v1625655645/website/background-images/event-lounge.png",
+          src: `${process.env.NEXT_PUBLIC_CLOUDINARY_IMAGE_API}/v1625655645/website/background-images/eventLounge.png`,
           alt: "Screening talent",
         }}
       >
-        <Text fontSize="xl">
+        <Text fontSize={[ "lg", "lg", "xl" ]}>
           Enter the event lounge and connect with other fans before the event
           starts.
         </Text>
       </RightImageContainer>
 
-      <Box bg="white" color="neutral.900" py={24} px={3}>
+      <Box bg="white" color="neutral.900" py={24} px={3} textAlign="center">
         <Container>
           <VStack spacing={6}>
-            <Heading fontSize="5xl" lineHeight={1}>
+            <Heading fontSize="5xl" lineHeight={1} >
               Are you a music artist?
             </Heading>
-            <Text fontSize="xl" fontWeight={300}>
+            <Text fontSize={[ "lg", "lg", "xl" ]} fontWeight={300}>
               There’s a reason why QJAM is used by some of the{" "}
               <strong>biggest</strong> artists and labels{" "}
               <strong>in the world</strong>.
             </Text>
-            <Text fontSize="xl" fontWeight={400}>
+            <Text fontSize={[ "lg", "lg", "xl" ]} fontWeight={400}>
               <strong>Join now</strong> to get closer to your fans like never
               before.
             </Text>
@@ -124,7 +126,7 @@ const Index = ({
                 variant="qjam"
                 size="lg"
                 px={16}
-                fontSize="xl"
+                fontSize={[ "lg", "lg", "xl" ]}
               >
                 Learn more
               </Button>

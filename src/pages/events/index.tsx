@@ -23,7 +23,7 @@ function seoConfig() {
       description: `View live, upcoming and past events with artists on the QJAM app.`,
       images: [
         {
-          url: "https://res.cloudinary.com/qjam/image/upload/v1575666417/website/SEO/Screenshot_2019-12-06_at_20.55.04.png",
+          url: `${process.env.NEXT_PUBLIC_CLOUDINARY_IMAGE_API}/v1575666417/website/SEO/Screenshot_2019-12-06_at_20.55.04.png`,
           width: 2504,
           height: 1408,
           alt: `QJAM – Meet your favourite artists.`,

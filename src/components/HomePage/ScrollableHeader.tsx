@@ -19,10 +19,10 @@ export const ScrollableHeader = ({
 }: React.PropsWithChildren<
   { heading: string; seeAllHref: string } & BoxProps
 >) => (
-  <Box py={6} {...other} px={3}>
+  <Box py={[3,3, 6]} {...other} px={3}>
     <Container>
-      <Flex justifyContent="space-between" alignItems="center" mb={4}>
-        <Heading fontSize="5xl">{heading}</Heading>
+      <Flex justifyContent="space-between" alignItems="center" mb={[2,2,4]}>
+        <Heading fontSize={["4xl", "4xl", "5xl"]}>{heading}</Heading>
         <Link href={seeAllHref} passHref={true}>
           <Button
             variant="qjam"

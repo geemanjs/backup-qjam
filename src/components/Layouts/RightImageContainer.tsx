@@ -15,17 +15,17 @@ export const RightImageContainer = ({
   bg,
   color,
   heading,
-  image: { size = "100%", alt, src },
+  image: { size = "100%", alt, src, css: imageCss },
   children,
   ...other
 }: React.PropsWithChildren<
   {
     heading: string| any;
-    image: { size?: string; src: string; alt: string };
+    image: { size?: string; src: string; alt: string, css?: any };
   } & BoxProps
 >) => {
   return (
-    <Box bg={bg} color={color} py={12} px={3}>
+    <Box bg={bg} color={color} py={12} px={3} {...other} overflow="hidden">
       <Container>
         <Stack
           direction={{ base: "column", lg: "row" }}
@@ -35,9 +35,9 @@ export const RightImageContainer = ({
         >
           <Flex flex="1" maxW={{ lg: "580px" }} direction="column">
             <Heading
-              fontSize="5xl"
+              fontSize={["4xl", "4xl", "5xl"]}
               width="max-content"
-              lineHeight="2.5rem"
+              lineHeight={["2rem", "2.5rem"]}
               borderBottomColor="green.500"
               borderBottomWidth="8px"
               borderBottomStyle="solid"
@@ -62,11 +62,12 @@ export const RightImageContainer = ({
             h={{ base: "auto", lg: "409px" }}
           >
             <Img
+              css={imageCss}
               float="right"
               pos="relative"
               zIndex="1"
-              maxHeight="440px"
-              h={{ lg: size, sm: "40%" }}
+              maxHeight={["260px", "260px", "400px"]}
+              h={["20%", "20%", size]}
               src={src}
               alt={alt}
             />
